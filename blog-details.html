@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+  <link rel="alternate icon" href="favicon.svg" type="image/svg+xml">
+  <title>Demystifying ISO 12647-2 & Fogra 51 – PrintForge Press Room</title>
+  <meta name="description" content="A comprehensive engineering guide to closed-loop spectrophotometry, in-line ink density control, and achieving ISO 12647-2 compliance in commercial offset lithography.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.8">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=2.8">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body class="pf-grid-bg">
+
+
+  <!-- Sticky Navbar -->
+  <header class="pf-navbar-wrap">
+    <div class="container">
+      <nav class="pf-navbar">
+        <a href="index.html" class="pf-brand">
+          <div class="pf-brand-icon"><span>P</span></div>
+          <span>PRINT<span class="text-danger">FORGE</span></span>
+        </a>
+
+        <ul class="pf-nav-menu">
+          <button class="pf-mobile-close d-lg-none"><i class="bi bi-x-lg"></i></button>
+
+          <!-- Home Dropdown (Only Dropdown) -->
+          <li class="pf-nav-item pf-dropdown">
+            <a href="index.html" class="pf-nav-link">Home <i class="bi bi-chevron-down"></i></a>
+            <ul class="pf-dropdown-menu">
+              <li><a href="index.html" class="pf-dropdown-item">Commercial Offset Printing <i class="bi bi-arrow-right"></i></a></li>
+              <li><a href="home-2.html" class="pf-dropdown-item">Book Printing Offset <i class="bi bi-arrow-right"></i></a></li>
+            </ul>
+          </li>
+
+          <li class="pf-nav-item"><a href="about.html" class="pf-nav-link">About Us</a></li>
+          <li class="pf-nav-item"><a href="services.html" class="pf-nav-link">Services</a></li>
+          <li class="pf-nav-item"><a href="pricing.html" class="pf-nav-link">Pricing</a></li>
+
+          <!-- Dedicated Booking Navigation Item -->
+          <li class="pf-nav-item">
+            <a href="booking.html" class="pf-nav-link pf-nav-booking-link">Book Order</a>
+          </li>
+          <li class="pf-nav-item"><a href="blog.html" class="pf-nav-link active">Blog</a></li>
+          <li class="pf-nav-item"><a href="contact.html" class="pf-nav-link">Contact</a></li>
+        </ul>
+
+        <div class="pf-nav-actions">
+          <button class="pf-action-icon-btn pf-theme-toggle"><i class="bi bi-moon-stars-fill"></i></button>
+          <button class="pf-rtl-toggle">RTL</button>
+
+          <a href="contact.html" class="pf-btn pf-btn-primary d-none d-sm-inline-flex">Get a Quote <i class="bi bi-arrow-up-right"></i></a>
+          <button class="pf-mobile-toggle"><i class="bi bi-list"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       ARTICLE HEADER & META
+       =================================================================== -->
+  <section class="py-5" style="background: var(--pf-footer-bg); color: #fff; padding-top: 5.5rem !important; padding-bottom: 4rem !important;">
+    <div class="container text-center">
+      <div class="pf-badge pf-badge-dark border-light text-white mb-3" id="pf-article-badge">Color Management &amp; Lithography</div>
+      <h1 class="display-5 fw-bold text-white mb-4 max-w-900 mx-auto" style="line-height: 1.2;" id="pf-article-title">
+        Demystifying ISO 12647-2 &amp; Fogra 51: How Closed-Loop Spectrophotometry Prevents Color Drifts
+      </h1>
+      
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 text-secondary small">
+        <div class="d-flex align-items-center gap-2">
+          <img src="assets/images/about/Dr. Evelyn Sterling.jpg" alt="Dr. Evelyn Sterling" class="rounded-circle flex-shrink-0" width="38" height="38" style="object-fit: cover; aspect-ratio: 1 / 1; width: 38px; height: 38px;" id="pf-article-author-img">
+          <span class="text-white fw-semibold" id="pf-article-author-name">By Dr. Evelyn Sterling</span>
+        </div>
+        <span>&bull;</span>
+        <span class="text-white"><i class="bi bi-calendar3 text-danger me-1"></i> <span id="pf-article-meta-date">October 28, 2026</span></span>
+        <span>&bull;</span>
+        <span class="text-white"><i class="bi bi-clock text-danger me-1"></i> <span id="pf-article-meta-time">8 Min Read</span></span>
+        <span>&bull;</span>
+        <span class="text-white"><i class="bi bi-eye text-danger me-1"></i> <span id="pf-article-meta-views">3,420 Views</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flowing Organic Lavender Wave Divider (Header to Article) -->
+  <div class="pf-wave-divider" style="background-color: var(--pf-footer-bg);">
+    <svg viewBox="0 0 1440 70" fill="none" preserveAspectRatio="none">
+      <path d="M0,25 C320,75 440,0 720,35 C1000,75 1140,5 1440,25 L1440,100 L0,100 Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+
+  <!-- ===================================================================
+       ARTICLE BODY & SIDEBAR
+       =================================================================== -->
+  <section class="py-5">
+    <div class="container py-4">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <div class="pf-reading-panel">
+          <!-- Featured Image -->
+          <div class="rounded-4 overflow-hidden mb-5 shadow-sm pf-article-hero-wrap" style="height: 420px; background: var(--pf-bg-alt); border: 1px solid var(--pf-border-color); position: relative;">
+            <img src="assets/images/blog/Featured Guide.jpg" alt="Demystifying ISO 12647-2 &amp; Fogra 51" class="w-100 h-100" style="object-fit: cover; object-position: center center; display: block;" id="pf-article-hero-img">
+          </div>
+
+          <!-- Table of Contents (Mobile Only - On desktop, single sticky container is in sidebar) -->
+          <div class="p-4 rounded-3 border bg-light mb-5 d-lg-none" style="background-color: var(--pf-surface) !important;">
+            <h5 class="fw-bold mb-3"><i class="bi bi-list-nested text-danger me-2"></i> Table of Contents</h5>
+            <ol class="small mb-0 text-secondary" style="line-height: 2;" id="pf-article-toc-list">
+              <li><a href="#section-1" class="text-decoration-none">The Physics of Color Drift on Offset Presses</a></li>
+              <li><a href="#section-2" class="text-decoration-none">What ISO 12647-2 & Fogra 51 Mandate</a></li>
+              <li><a href="#section-3" class="text-decoration-none">How In-Line Spectrophotometry Works at 18,000 SPH</a></li>
+              <li><a href="#section-4" class="text-decoration-none">Practical Checklist for Prepress Art Directors</a></li>
+            </ol>
+          </div>
+
+          <!-- Content Sections -->
+          <div class="article-content" id="pf-article-content-body" style="font-size: 1.0625rem; line-height: 1.8;">
+            <p id="section-1" class="lead text-dark fw-medium">
+              Every master press operator knows that an offset printing machine is a living, breathing mechanical entity. Temperature fluctuations in the ink duct rollers, slight changes in fountain solution conductivity, and hygroscopic humidity absorption by the paper web all strive to push color out of registration.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5 mb-3">1. The Physics of Color Drift on Offset Presses</h3>
+            <p>
+              In traditional lithography, ink transfer relies upon a microscopic chemical balance between hydrophobic oil-based ink and hydrophilic fountain solution. Over an extended 500,000-sheet run, slight rises in ambient temperature cause the ink viscosity to drop, increasing ink film transfer thickness. Without continuous feedback, a brand's corporate red can migrate noticeably toward deep magenta.
+            </p>
+
+            <!-- Pull Quote Callout -->
+            <blockquote class="pf-pull-quote my-4">
+              <p class="pf-pull-quote-text">
+                "A human eye can distinguish a Delta E of 1.0 under calibrated D50 daylight lamps. When packaging cartons sit side by side on retail shelves, a variation of Delta E 2.5 is immediately perceptible as a counterfeit or stale product."
+              </p>
+              <footer class="pf-pull-quote-author">Dr. Evelyn Sterling, Head of Color Science at PrintForge</footer>
+            </blockquote>
+
+            <h3 id="section-2" class="h4 fw-bold mt-5 mb-3">2. What ISO 12647-2 & Fogra 51 Mandate</h3>
+            <p>
+              The ISO 12647-2 standard defines target colorimetric values (CIE L*a*b*) for process inks printed onto standardized substrates. Fogra 51 (characterization data set) modernized these standards to account for modern papers containing Optical Brightening Agents (OBAs), utilizing M1 measurement conditions (D50 illuminant including UV component).
+            </p>
+
+            <h3 id="section-3" class="h4 fw-bold mt-5 mb-3">3. How In-Line Spectrophotometry Works at 18,000 SPH</h3>
+            <p>
+              On our Heidelberg Speedmaster XL 106, the Prinect Inpress Control 3 system utilizes a high-precision spectral sensor mounted directly inside the final printing unit. At maximum running speeds (5 sheets per second):
+            </p>
+            <ul>
+              <li>The sensor captures spectral reflectance across a micro color control strip positioned in the sheet margin.</li>
+              <li>Data is mathematically converted into solid ink density and Delta E deviations within milliseconds.</li>
+              <li>Automated motorized ink-zone motors adjust ink fountain keys across all 8 printing towers without stopping the press.</li>
+              <li>Waste sheets are automatically routed to a bypass rejection chute before entering the delivery pile.</li>
+            </ul>
+
+            <h3 id="section-4" class="h4 fw-bold mt-5 mb-3">4. Practical Checklist for Prepress Art Directors</h3>
+            <p>
+              To ensure your digital files reproduce with 100% fidelity on our automated press lines, adhere to the following preflight standards:
+            </p>
+            <ol>
+              <li><strong>Convert RGB Imagery to Fogra 51 (PSO Coated v3):</strong> Avoid generic sRGB or US Web Coated SWOP profiles for European/North American commercial paper runs.</li>
+              <li><strong>Set Total Ink Coverage (TIC) below 300%:</strong> Excess ink stacking beyond 300% causes smearing and extended drying times.</li>
+              <li><strong>Verify Overprint Settings on Rich Black:</strong> Use <code>C: 60, M: 40, Y: 40, K: 100</code> for lush, deep black backgrounds without bronzing.</li>
+            </ol>
+          </div>
+
+          <!-- Social Sharing & Tags -->
+          <div class="d-flex flex-wrap justify-content-between align-items-center py-4 my-4 border-top border-bottom">
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <span class="fw-bold small text-secondary me-1">Tags:</span>
+              <a href="blog.html" class="badge bg-light text-dark border">#ISO12647</a>
+              <a href="blog.html" class="badge bg-light text-dark border">#Fogra51</a>
+              <a href="blog.html" class="badge bg-light text-dark border">#Spectrophotometry</a>
+              <a href="blog.html" class="badge bg-light text-dark border">#Heidelberg</a>
+            </div>
+
+            <div class="d-flex align-items-center gap-2 mt-3 mt-sm-0">
+              <span class="fw-bold small text-secondary">Share:</span>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="pf-action-icon-btn" style="width:34px;height:34px;" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="pf-action-icon-btn" style="width:34px;height:34px;" title="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="pf-action-icon-btn" style="width:34px;height:34px;" title="Facebook"><i class="bi bi-facebook"></i></a>
+            </div>
+          </div>
+
+          <!-- Author Bio Box -->
+          <div class="p-4 rounded-3 border bg-white mb-5 d-flex flex-column flex-sm-row gap-3 gap-sm-4 align-items-start align-items-sm-center" style="background-color: var(--pf-surface) !important;">
+            <img src="assets/images/about/Dr. Evelyn Sterling.jpg" alt="Author" class="rounded-circle flex-shrink-0 shadow-sm" width="80" height="80" style="object-fit: cover; aspect-ratio: 1 / 1; width: 80px; height: 80px; min-width: 80px; max-height: 80px;" id="pf-author-bio-img">
+            <div>
+              <h5 class="fw-bold mb-1" id="pf-author-bio-name">About Dr. Evelyn Sterling</h5>
+              <div class="small text-danger fw-semibold mb-2" id="pf-author-bio-role">Director of Color Science &amp; CTP Systems, PrintForge</div>
+              <p class="small text-secondary mb-0" id="pf-author-bio-desc">
+                Dr. Sterling holds a doctorate in imaging science and has spent 19 years optimizing lithographic calibration, RIP screening algorithms, and automated ink-key formulations for global publishers.
+              </p>
+            </div>
+          </div>
+
+          <!-- Related Posts (2 Columns) -->
+          <h4 class="fw-bold mb-4">Related Engineering Articles</h4>
+          <div class="row g-4" id="pf-related-articles-grid">
+            <div class="col-md-6">
+              <div class="pf-blog-card h-100">
+                <div class="pf-blog-thumb" style="height: 190px;">
+                  <a href="blog-details.html?article=smyth-sewn">
+                    <img src="assets/images/blog/Smyth-Sewn vs. PUR.jpg" alt="Smyth-Sewn Binding" loading="lazy">
+                  </a>
+                </div>
+                <div class="pf-blog-body">
+                  <h5 class="h6 fw-bold"><a href="blog-details.html?article=smyth-sewn">Smyth-Sewn vs. PUR Perfect Binding</a></h5>
+                  <p class="small text-secondary mb-0">Structural spine durability compared under mechanical tension tests.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="pf-blog-card h-100">
+                <div class="pf-blog-thumb" style="height: 190px;">
+                  <a href="blog-details.html?article=packaging-dielines">
+                    <img src="assets/images/blog/Designing Flawless Packaging Dielines.jpg" alt="Packaging Dielines" loading="lazy">
+                  </a>
+                </div>
+                <div class="pf-blog-body">
+                  <h5 class="h6 fw-bold"><a href="blog-details.html?article=packaging-dielines">Designing Packaging Dielines for Folding Cartons</a></h5>
+                  <p class="small text-secondary mb-0">Preventing carton fiber cracking through correct grain alignment.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <!-- Sticky Sidebar -->
+        <div class="col-lg-4 pf-blog-sidebar-col">
+          <div class="pf-blog-sidebar pf-sticky-sidebar">
+            <!-- Widget 1: Table of Contents -->
+            <div class="pf-sidebar-widget">
+              <h4 class="pf-widget-title">Table of Contents</h4>
+              <ul class="list-unstyled small mb-0" id="pf-sidebar-toc-list">
+                <li class="mb-2"><a href="#section-1" class="text-secondary"><i class="bi bi-chevron-right me-1"></i> Physics of Color Drift</a></li>
+                <li class="mb-2"><a href="#section-2" class="text-secondary"><i class="bi bi-chevron-right me-1"></i> ISO 12647-2 &amp; Fogra 51</a></li>
+                <li class="mb-2"><a href="#section-3" class="text-secondary"><i class="bi bi-chevron-right me-1"></i> Spectrophotometry at 18k SPH</a></li>
+                <li><a href="#section-4" class="text-secondary"><i class="bi bi-chevron-right me-1"></i> Checklist for Art Directors</a></li>
+              </ul>
+            </div>
+
+            <!-- Widget 2: Preflight Card (High Contrast) -->
+            <div class="pf-sidebar-widget pf-preflight-card text-white">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-danger rounded-pill px-2 py-1 small fw-bold">Live Preflight</span>
+              </div>
+              <h5 class="text-white fw-bold mb-2">Preflighting a Print Run?</h5>
+              <p class="pf-preflight-desc mb-3">Upload your PDF for free spectral color preflight and receive an automated report in 30 minutes.</p>
+              <a href="contact.html" class="pf-btn pf-btn-primary w-100 text-white fw-bold d-inline-flex align-items-center justify-content-center">
+                Upload Files for Preflight <i class="bi bi-arrow-up-right ms-2"></i>
+              </a>
+            </div>
+
+            <!-- Widget 3: Categories -->
+            <div class="pf-sidebar-widget">
+              <h4 class="pf-widget-title">Categories</h4>
+              <ul class="pf-category-list list-unstyled mb-0">
+                <li class="pf-category-item d-flex justify-content-between align-items-center py-2 border-bottom" data-topic="Commercial-Offset" role="button" title="Read related article on Commercial Offset">
+                  <a href="blog-details.html?topic=Commercial-Offset" class="pf-category-link">Commercial Offset</a>
+                  <a href="blog-details.html?topic=Commercial-Offset" class="pf-cat-badge text-decoration-none">18</a>
+                </li>
+                <li class="pf-category-item d-flex justify-content-between align-items-center py-2 border-bottom" data-topic="Book-Manufacturing" role="button" title="Read related article on Book Manufacturing">
+                  <a href="blog-details.html?topic=Book-Manufacturing" class="pf-category-link">Book Manufacturing</a>
+                  <a href="blog-details.html?topic=Book-Manufacturing" class="pf-cat-badge text-decoration-none">24</a>
+                </li>
+                <li class="pf-category-item d-flex justify-content-between align-items-center py-2 border-bottom" data-topic="Packaging-Engineering" role="button" title="Read related article on Packaging Engineering">
+                  <a href="blog-details.html?topic=Packaging-Engineering" class="pf-category-link">Packaging Engineering</a>
+                  <a href="blog-details.html?topic=Packaging-Engineering" class="pf-cat-badge text-decoration-none">12</a>
+                </li>
+                <li class="pf-category-item d-flex justify-content-between align-items-center py-2 border-bottom" data-topic="Paper-Science" role="button" title="Read related article on Paper &amp; Material Science">
+                  <a href="blog-details.html?topic=Paper-Science" class="pf-category-link">Paper &amp; Material Science</a>
+                  <a href="blog-details.html?topic=Paper-Science" class="pf-cat-badge text-decoration-none">9</a>
+                </li>
+                <li class="pf-category-item d-flex justify-content-between align-items-center py-2" data-topic="Prepress-Color" role="button" title="Read related article on Prepress &amp; Color Calibration">
+                  <a href="blog-details.html?topic=Prepress-Color" class="pf-category-link">Prepress &amp; Color Calibration</a>
+                  <a href="blog-details.html?topic=Prepress-Color" class="pf-cat-badge text-decoration-none">15</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Widget 4: Popular Tags -->
+            <div class="pf-sidebar-widget">
+              <h4 class="pf-widget-title">Popular Tags</h4>
+              <div class="pf-tags-list">
+                <a href="blog-details.html?tag=Heidelberg" class="pf-tag-badge" title="Read related article on Heidelberg Technology">#Heidelberg</a>
+                <a href="blog-details.html?tag=Fogra51" class="pf-tag-badge" title="Read related article on Fogra51 Standards">#Fogra51</a>
+                <a href="blog-details.html?tag=Pantone" class="pf-tag-badge" title="Read related article on Pantone Colors">#Pantone</a>
+                <a href="blog-details.html?tag=Hardcover" class="pf-tag-badge" title="Read related article on Hardcover Binding">#Hardcover</a>
+                <a href="blog-details.html?tag=GoldFoil" class="pf-tag-badge" title="Read related article on Gold Foil Finishes">#GoldFoil</a>
+                <a href="blog-details.html?tag=FSCCertified" class="pf-tag-badge" title="Read related article on FSC Certified Papers">#FSCCertified</a>
+                <a href="blog-details.html?tag=SmythSewn" class="pf-tag-badge" title="Read related article on Smyth Sewn Bookbinding">#SmythSewn</a>
+                <a href="blog-details.html?tag=OffsetPress" class="pf-tag-badge" title="Read related article on Offset Press Lithography">#OffsetPress</a>
+                <a href="blog-details.html?tag=ColorScience" class="pf-tag-badge" title="Read related article on Color Science &amp; Calibration">#ColorScience</a>
+                <a href="blog-details.html?tag=PaperBulking" class="pf-tag-badge" title="Read related article on Paper Bulking &amp; Caliper">#PaperBulking</a>
+                <a href="blog-details.html?tag=DieCutting" class="pf-tag-badge" title="Read related article on Precision Die Cutting">#DieCutting</a>
+                <a href="blog-details.html?tag=Debossing" class="pf-tag-badge" title="Read related article on Debossing &amp; Embossing">#Debossing</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flowing Organic Lavender Wave Divider (Article to Footer) -->
+  <div class="pf-wave-divider" style="background-color: var(--pf-warm-paper);">
+    <svg viewBox="0 0 1440 70" fill="none" preserveAspectRatio="none">
+      <path d="M0,25 C320,75 440,0 720,35 C1000,75 1140,5 1440,25 L1440,100 L0,100 Z" fill="#15091E"></path>
+    </svg>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="pf-search-modal" id="pf-search-modal">
+    <div class="pf-search-inner">
+      <button class="pf-search-close">&times;</button>
+      <form action="blog.html" method="get">
+        <input type="text" class="pf-search-input" placeholder="Search blog articles..." autofocus>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       Global Footer
+       =================================================================== -->
+  <footer class="pf-footer">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Col 1: Brand Info -->
+        <div class="col-lg-4">
+          <a href="index.html" class="pf-brand mb-3 d-inline-flex align-items-center">
+            <div class="pf-brand-icon">
+              <span>P</span>
+            </div>
+            <span>PRINT<span class="text-danger">FORGE</span></span>
+          </a>
+          <p class="small text-secondary">
+            PrintForge is an elite industrial offset printing press and commercial book manufacturing facility. We engineer tangible print perfection through Heidelberg automated sheetfed technology.
+          </p>
+          <div class="pf-cmyk-strip my-3">
+            <span class="pf-cmyk-c"></span>
+            <span class="pf-cmyk-m"></span>
+            <span class="pf-cmyk-y"></span>
+            <span class="pf-cmyk-k"></span>
+          </div>
+          <div class="pf-footer-social d-flex gap-2 mt-3">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="pf-social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="pf-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="pf-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="pf-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-sm-6 col-lg-2">
+          <h5>Navigation</h5>
+          <ul class="pf-footer-links">
+            <li><a href="index.html">Commercial Offset Printing</a></li>
+            <li><a href="home-2.html">Book Printing Offset</a></li>
+            <li><a href="about.html">About Plant</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="booking.html">Book Order</a></li>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="blog.html">Press Insights</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="col-sm-6 col-lg-3">
+          <h5>Core Capabilities</h5>
+          <ul class="pf-footer-links">
+            <li><a href="service-details.html">Offset Commercial Printing</a></li>
+            <li><a href="service-details.html">Hardcover & Softcover Books</a></li>
+            <li><a href="service-details.html">Folded Brochures & Menus</a></li>
+            <li><a href="service-details.html">Luxury Rigid Packaging</a></li>
+            <li><a href="service-details.html">Corporate Identity & Cards</a></li>
+            <li><a href="service-details.html">Foil Stamping & Embossing</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Contact -->
+        <div class="col-lg-3">
+          <h5>Press Updates</h5>
+          <p class="small text-secondary">Subscribe for technical paper guides, Pantone release notes, and factory insights.</p>
+          <form class="pf-newsletter-form mb-3">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-sm" placeholder="Your work email..." required>
+              <button class="btn btn-danger btn-sm" type="submit">Join</button>
+            </div>
+          </form>
+          <div class="small text-secondary mt-2">
+            <div><i class="bi bi-geo-alt text-danger me-1"></i> 742 Industrial Pkwy, NY</div>
+            <div><i class="bi bi-envelope text-danger me-1"></i> press@printforge-demo.com</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="pf-footer-bottom text-center">
+        <div class="text-secondary small">
+          &copy; 2026 PrintForge Press & Publishing Ltd. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

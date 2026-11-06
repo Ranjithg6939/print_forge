@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+  <link rel="alternate icon" href="favicon.svg" type="image/svg+xml">
+  <title>Order Booking & Live Price Configurator – PrintForge</title>
+  <meta name="description" content="Configure exact card quantities, select luxury paper substrates and hot foil finishes, view real-time press quotes, and reserve your commercial printing slot instantly.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=3.0">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=3.0">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body class="pf-grid-bg">
+
+  <!-- Sticky Navbar -->
+  <header class="pf-navbar-wrap">
+    <div class="container">
+      <nav class="pf-navbar">
+        <a href="index.html" class="pf-brand">
+          <div class="pf-brand-icon"><span>P</span></div>
+          <span>PRINT<span class="text-danger">FORGE</span></span>
+        </a>
+
+        <ul class="pf-nav-menu">
+          <button class="pf-mobile-close d-lg-none"><i class="bi bi-x-lg"></i></button>
+
+          <!-- Home Dropdown -->
+          <li class="pf-nav-item pf-dropdown">
+            <a href="index.html" class="pf-nav-link">Home <i class="bi bi-chevron-down"></i></a>
+            <ul class="pf-dropdown-menu">
+              <li><a href="index.html" class="pf-dropdown-item">Commercial Offset Printing <i class="bi bi-arrow-right"></i></a></li>
+              <li><a href="home-2.html" class="pf-dropdown-item">Book Printing Offset <i class="bi bi-arrow-right"></i></a></li>
+            </ul>
+          </li>
+
+          <li class="pf-nav-item"><a href="about.html" class="pf-nav-link">About Us</a></li>
+          <li class="pf-nav-item"><a href="services.html" class="pf-nav-link">Services</a></li>
+
+          <li class="pf-nav-item"><a href="pricing.html" class="pf-nav-link">Pricing</a></li>
+
+          <!-- Dedicated Booking Navigation Item -->
+          <li class="pf-nav-item">
+            <a href="booking.html" class="pf-nav-link active pf-nav-booking-link">Book Order</a>
+          </li>
+
+          <li class="pf-nav-item"><a href="blog.html" class="pf-nav-link">Blog</a></li>
+          <li class="pf-nav-item"><a href="contact.html" class="pf-nav-link">Contact</a></li>
+        </ul>
+
+        <div class="pf-nav-actions">
+          <button class="pf-action-icon-btn pf-theme-toggle" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button class="pf-rtl-toggle" title="Toggle RTL">RTL</button>
+
+          <a href="contact.html" class="pf-btn pf-btn-primary d-none d-sm-inline-flex">Get a Quote <i class="bi bi-arrow-up-right"></i></a>
+          <button class="pf-mobile-toggle"><i class="bi bi-list"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       BOOKING HERO
+       =================================================================== -->
+  <section class="py-5" style="background: var(--pf-footer-bg); color: #fff; padding-top: 5.5rem !important; padding-bottom: 4rem !important;">
+    <div class="container text-center">
+      <div class="pf-badge pf-badge-dark border-light text-white mb-3">Live Factory Booking Engine</div>
+      <h1 class="display-4 fw-bold text-white mb-3 pf-title-underline text-center">Print Order Booking &amp; Quote</h1>
+      <p class="lead text-secondary max-w-700 mx-auto mt-3" style="color: #D8B8E8 !important;">
+        Choose your print product model, customize card counts, select substrates and embellishments, and lock in your press production run.
+      </p>
+      <div class="small mt-2" style="color: rgba(255,255,255,0.7) !important;">
+        * Instant transparent rates. All bookings receive digital PDF contract proofs before ink touches paper.
+      </div>
+    </div>
+  </section>
+
+  <!-- Flowing Organic Lavender Wave Divider (Hero to Booking) -->
+  <div class="pf-wave-divider" style="background-color: var(--pf-footer-bg);">
+    <svg viewBox="0 0 1440 70" fill="none" preserveAspectRatio="none">
+      <path d="M0,25 C320,75 440,0 720,35 C1000,75 1140,5 1440,25 L1440,100 L0,100 Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+
+  <!-- ===================================================================
+       LIVE ORDER BOOKING ENGINE & CALCULATOR
+       =================================================================== -->
+  <section class="py-5" id="card-booking-calculator">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-4 pf-reveal">
+        <div class="d-block mb-1"><span class="pf-badge">Step-by-Step Press Booking</span></div>
+        <h2 class="display-6 fw-bold pf-title-underline text-center">Configure &amp; Book Your Order</h2>
+        <p class="lead fw-bold mt-3 pf-section-subtitle" style="font-weight: 700; font-size: 1.15rem; line-height: 1.6;">Select your model with live category pricing, dial in your exact card quantity, and reserve automated Heidelberg press capacity.</p>
+      </div>
+
+      <div class="pf-calc-card">
+        <div class="row g-4 g-lg-5 align-items-stretch">
+          <!-- Left Column: Configurator Steps -->
+          <div class="col-lg-8 d-flex flex-column justify-content-between">
+            <!-- Step 1: Card / Print Model Selection with Product Images & Category Prices -->
+            <div class="mb-4">
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-1 mb-2">
+                <label class="pf-spec-label mb-0 fw-bold text-nowrap"><i class="bi bi-1-circle-fill text-danger me-1"></i> Step 1: Select Product Model</label>
+                <span class="small text-secondary fw-semibold">Click any item to customize</span>
+              </div>
+
+              <div class="pf-type-chips">
+                <!-- 1. Visiting Cards -->
+                <div class="pf-type-chip active" data-type="visiting-card">
+                  <img src="assets/images/pricing/Standard Corporate.jpg" alt="Visiting Cards" class="pf-type-chip-img">
+                  <span class="pf-cat-price-badge">From $0.048 / card</span>
+                  <div class="pf-type-chip-title">Visiting Cards</div>
+                  <div class="pf-type-chip-sub">Standard 3.5" × 2" Business Cards</div>
+                </div>
+
+                <!-- 2. Wedding Cards -->
+                <div class="pf-type-chip" data-type="wedding-card">
+                  <img src="assets/images/pricing/Classic Elegance Suite.jpg" alt="Wedding Cards" class="pf-type-chip-img">
+                  <span class="pf-cat-price-badge">From $1.45 / set</span>
+                  <div class="pf-type-chip-title">Wedding Cards</div>
+                  <div class="pf-type-chip-sub">5" × 7" Luxury Invitation Suite</div>
+                </div>
+
+                <!-- 3. Brochures -->
+                <div class="pf-type-chip" data-type="brochure">
+                  <img src="assets/images/pricing/Essential Trade.jpg" alt="Brochures" class="pf-type-chip-img">
+                  <span class="pf-cat-price-badge">From $0.16 / unit</span>
+                  <div class="pf-type-chip-title">Brochures</div>
+                  <div class="pf-type-chip-sub">Tri-Fold / Bi-Fold 170 GSM Coated</div>
+                </div>
+
+                <!-- 4. Book Printing -->
+                <div class="pf-type-chip" data-type="book">
+                  <img src="assets/images/pricing/Trade Paperback.jpg" alt="Book Printing" class="pf-type-chip-img">
+                  <span class="pf-cat-price-badge">From $0.90 / book</span>
+                  <div class="pf-type-chip-title">Book Printing</div>
+                  <div class="pf-type-chip-sub">Saddle, PUR &amp; Case Hardcover</div>
+                </div>
+
+                <!-- 5. Bulk Orders -->
+                <div class="pf-type-chip" data-type="bulk">
+                  <img src="assets/images/pricing/Regional Freight.jpg" alt="Bulk Orders" class="pf-type-chip-img">
+                  <span class="pf-cat-price-badge">From $0.11 / box</span>
+                  <div class="pf-type-chip-title">Bulk Orders</div>
+                  <div class="pf-type-chip-sub">5,000+ Units Volume Press Run</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: How Many Cards to Book? -->
+            <div class="mb-4">
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-2">
+                <label class="pf-spec-label mb-0 fw-bold"><i class="bi bi-2-circle-fill text-danger me-1"></i> Step 2: How Many Cards / Units to Book?</label>
+                <span class="badge bg-success bg-opacity-10 text-success fw-bold px-2 py-1 flex-shrink-0 text-nowrap"><i class="bi bi-lightning-fill"></i> Bulk Volume Tier Active</span>
+              </div>
+
+              <!-- Quick Select Buttons: 8 Chips in a 4x2 Grid -->
+              <div class="pf-qty-grid">
+                <div class="pf-qty-chip" data-qty="100">
+                  <div>100</div>
+                  <span class="pf-discount-tag text-secondary">Standard</span>
+                </div>
+                <div class="pf-qty-chip" data-qty="250">
+                  <div>250</div>
+                  <span class="pf-discount-tag text-secondary">Save 8%</span>
+                </div>
+                <div class="pf-qty-chip" data-qty="500">
+                  <div>500</div>
+                  <span class="pf-discount-tag text-success">Save 15%</span>
+                </div>
+                <div class="pf-qty-chip active" data-qty="1000">
+                  <div>1,000</div>
+                  <span class="pf-discount-tag text-success">Save 25% ⭐</span>
+                </div>
+                <div class="pf-qty-chip" data-qty="2500">
+                  <div>2,500</div>
+                  <span class="pf-discount-tag text-success">Save 35%</span>
+                </div>
+                <div class="pf-qty-chip" data-qty="5000">
+                  <div>5,000</div>
+                  <span class="pf-discount-tag text-success">Save 45%</span>
+                </div>
+                <div class="pf-qty-chip" data-qty="10000">
+                  <div>10,000</div>
+                  <span class="pf-discount-tag text-danger">Save 50%</span>
+                </div>
+                <div class="pf-qty-chip" data-qty="25000">
+                  <div>25,000+</div>
+                  <span class="pf-discount-tag text-danger">Wholesale</span>
+                </div>
+              </div>
+
+              <!-- Fine Adjustment Stepper & Slider -->
+              <div class="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-3 mt-3 p-3 bg-light rounded-3 border pf-stepper-slider-box" style="background: var(--pf-bg-alt) !important;">
+                <div class="pf-stepper-wrap">
+                  <button type="button" class="pf-stepper-btn" id="calc-qty-minus" aria-label="Decrease quantity"><i class="bi bi-dash"></i></button>
+                  <input type="number" id="calc-qty-input" class="pf-stepper-input" value="1000" min="50" max="25000" step="50">
+                  <button type="button" class="pf-stepper-btn" id="calc-qty-plus" aria-label="Increase quantity"><i class="bi bi-plus"></i></button>
+                </div>
+                <div class="flex-grow-1 pf-slider-wrap">
+                  <input type="range" class="pf-qty-slider" id="calc-qty-slider" min="50" max="10000" step="50" value="1000">
+                  <div class="d-flex justify-content-between text-secondary mt-1" style="font-size: clamp(0.68rem, 2vw, 0.76rem); font-weight: 600;">
+                    <span>50</span>
+                    <span class="text-center">1k <span class="d-none d-sm-inline">(Popular)</span></span>
+                    <span>5k</span>
+                    <span>10k+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Paper Stock & Printing Sides -->
+            <div class="row g-3 mb-4 align-items-end">
+              <div class="col-md-7">
+                <label class="pf-spec-label"><i class="bi bi-3-circle-fill text-danger me-1"></i> Step 3: Paper Stock &amp; Weight</label>
+                <select class="form-select" id="calc-paper-select" style="background: var(--pf-surface); border-color: var(--pf-border-color); color: var(--pf-text-body); height: 48px; padding: 10px 14px;">
+                  <option value="350-matte" selected>350 GSM Matte Art Board (Classic Smooth - Included)</option>
+                  <option value="350-gloss">350 GSM High-Gloss Coated (Vibrant Colors +$4)</option>
+                  <option value="400-velvet">400 GSM Velvet Soft-Touch Laminate (Ultra Luxury +$12)</option>
+                  <option value="450-linen">450 GSM Heavy Textured Linen Board (+$18)</option>
+                  <option value="600-cotton">600 GSM Cotton Archival Letterpress Board (+$32)</option>
+                </select>
+              </div>
+
+              <div class="col-md-5">
+                <label class="pf-spec-label">Print Sides</label>
+                <div class="d-flex gap-2 pf-print-sides-wrap">
+                  <label class="pf-addon-card flex-fill mb-0 py-2 px-2 d-flex align-items-center justify-content-center text-center gap-1" style="min-height: 48px; height: auto; min-width: 0;">
+                    <input type="radio" name="calc_sides" value="single" class="form-check-input me-1 flex-shrink-0">
+                    <span class="small fw-bold text-nowrap" style="font-size: clamp(0.72rem, 2.5vw, 0.85rem);">Single (4/0)</span>
+                  </label>
+                  <label class="pf-addon-card flex-fill mb-0 active py-2 px-2 d-flex align-items-center justify-content-center text-center gap-1" style="min-height: 48px; height: auto; min-width: 0;">
+                    <input type="radio" name="calc_sides" value="double" class="form-check-input me-1 flex-shrink-0" checked>
+                    <span class="small fw-bold text-nowrap" style="font-size: clamp(0.72rem, 2.5vw, 0.85rem);">Double (4/4)</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4: Luxury Finishes & Add-Ons (Balanced 3x2 Grid) -->
+            <div class="mb-0">
+              <label class="pf-spec-label fw-bold"><i class="bi bi-4-circle-fill text-danger me-1"></i> Step 4: Embellishments &amp; Special Finishes</label>
+              <div class="pf-addons-grid">
+                <label class="pf-addon-card">
+                  <input type="checkbox" class="form-check-input pf-calc-addon-check" value="foil" checked>
+                  <span class="pf-addon-text"><i class="bi bi-stars text-warning me-1"></i> Hot Gold Foil (+$18)</span>
+                </label>
+                <label class="pf-addon-card">
+                  <input type="checkbox" class="form-check-input pf-calc-addon-check" value="uv">
+                  <span class="pf-addon-text"><i class="bi bi-droplet-half text-primary me-1"></i> Raised Spot UV (+$14)</span>
+                </label>
+                <label class="pf-addon-card">
+                  <input type="checkbox" class="form-check-input pf-calc-addon-check" value="rounded">
+                  <span class="pf-addon-text"><i class="bi bi-bounding-box-circles text-info me-1"></i> Rounded Corners (+$8)</span>
+                </label>
+                <label class="pf-addon-card">
+                  <input type="checkbox" class="form-check-input pf-calc-addon-check" value="matte-lam">
+                  <span class="pf-addon-text"><i class="bi bi-shield-check text-success me-1"></i> Velvet Matte (+$10)</span>
+                </label>
+                <label class="pf-addon-card">
+                  <input type="checkbox" class="form-check-input pf-calc-addon-check" value="gilding">
+                  <span class="pf-addon-text"><i class="bi bi-palette text-danger me-1"></i> Edge Foil (+$25)</span>
+                </label>
+                <label class="pf-addon-card">
+                  <input type="checkbox" class="form-check-input" id="calc-rush-check">
+                  <span class="pf-addon-text text-danger fw-bold"><i class="bi bi-stopwatch text-danger me-1"></i> 24-48h Rush (+$25)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Order Summary & Booking Action -->
+          <div class="col-lg-4 d-flex flex-column">
+            <div class="pf-calc-summary">
+              <div>
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge bg-light text-dark fw-bold px-2 py-1 text-uppercase" style="letter-spacing: 0.05em; font-size: 0.72rem;">Live Price Quote</span>
+                  <span class="small fw-bold opacity-90 text-nowrap" style="font-size: 0.78rem;"><i class="bi bi-shield-lock-fill text-warning me-1"></i> Instant Booking</span>
+                </div>
+
+                <!-- Product Live Preview Thumbnail -->
+                <div class="mb-3 text-center">
+                  <img id="calc-summary-img" src="assets/images/pricing/Standard Corporate.jpg" alt="Visiting Cards" class="img-fluid rounded-3 shadow-sm border border-light border-opacity-25" style="height: 110px; width: 100%; object-fit: cover;">
+                </div>
+
+                <h4 class="h5 fw-bold text-white mb-1" id="calc-summary-type">Visiting Cards</h4>
+                <p class="small text-white-50 mb-3 fw-bold" id="calc-summary-qty">1,000 Cards / Units</p>
+
+                <div class="pf-summary-row">
+                  <span class="opacity-90 fw-bold">Unit Rate:</span>
+                  <span class="fw-bold" id="calc-unit-price">$0.071 / unit</span>
+                </div>
+
+                <div class="pf-summary-row">
+                  <span class="opacity-90 fw-bold">Base Press Run:</span>
+                  <span class="fw-bold" id="calc-base-price">$80.00</span>
+                </div>
+
+                <div class="pf-summary-row">
+                  <span class="opacity-90 fw-bold">Volume Discount:</span>
+                  <span class="text-success fw-bold" id="calc-discount"><span class="pf-discount-badge">Save 25%</span> -$20.00</span>
+                </div>
+
+                <div class="pf-summary-row">
+                  <span class="opacity-90 fw-bold">Finishes &amp; Upgrades:</span>
+                  <span class="fw-bold" id="calc-addons">+$26.00</span>
+                </div>
+
+                <div class="pf-summary-row">
+                  <span class="opacity-90 fw-bold">Digital PDF Proof:</span>
+                  <span class="text-success fw-bold">FREE</span>
+                </div>
+              </div>
+
+              <div class="pf-summary-footer mt-auto pt-3">
+                <div class="pf-summary-total">
+                  <div>
+                    <div class="small opacity-90 text-uppercase fw-bold" style="letter-spacing: 0.04em;">Estimated Total</div>
+                    <div class="small text-white-50 fw-semibold" id="calc-summary-delivery">Standard Dispatch: Fri, Nov 7</div>
+                  </div>
+                  <div class="pf-total-price" id="calc-total">$86</div>
+                </div>
+
+                <button type="button" class="btn btn-light w-100 mt-3 py-2 px-2 px-sm-3 fw-bold text-uppercase d-flex align-items-center justify-content-center gap-2 shadow" style="color: #491763; border-radius: 12px; font-size: clamp(0.75rem, 2.7vw, 0.92rem); font-weight: 800; white-space: nowrap; max-width: 100%;" data-bs-toggle="modal" data-bs-target="#pfCardBookingModal">
+                  <span class="text-truncate">Book This Order Now</span>
+                  <i class="bi bi-arrow-right-circle-fill fs-5 flex-shrink-0"></i>
+                </button>
+
+                <div class="text-center small opacity-90 mt-2 fw-bold" style="font-size: clamp(0.72rem, 2.4vw, 0.82rem); line-height: 1.35;">
+                  <i class="bi bi-check2-circle text-success me-1"></i> No immediate payment needed to reserve slot
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Interactive Card & Print Order Booking Modal
+       =================================================================== -->
+  <div class="modal fade pf-booking-modal" id="pfCardBookingModal" tabindex="-1" aria-labelledby="pfCardBookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+          <div>
+            <div class="badge bg-danger bg-opacity-10 text-danger fw-bold mb-1">PrintForge Press Queue</div>
+            <h3 class="modal-title h5 fw-bold mb-0" id="pfCardBookingModalLabel">Book Your Printing Order Slot</h3>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Active Form View -->
+          <div id="pf-booking-form-view">
+            <!-- Order Specs Recap Banner with Dynamic Image & Specs -->
+            <div class="p-3 mb-4 rounded-3 border d-flex flex-wrap justify-content-between align-items-center gap-3" style="background: var(--pf-soft-lilac); border-color: rgba(121, 34, 165, 0.2) !important;">
+              <div class="d-flex align-items-center gap-3">
+                <img id="modal-booking-img" src="assets/images/pricing/Standard Corporate.jpg" alt="Selected Model" class="rounded-2 border shadow-sm" style="width: 55px; height: 55px; object-fit: cover;">
+                <div>
+                  <div class="small text-secondary text-uppercase fw-bold">Selected Order Model &amp; Specs:</div>
+                  <div class="fw-bold text-dark" id="modal-booking-summary" style="color: var(--pf-text-headings) !important;">1,000 × Visiting Cards (350 GSM Matte Art Board, Double-Sided)</div>
+                </div>
+              </div>
+              <div class="text-end ms-auto">
+                <div class="small text-secondary text-uppercase fw-bold">Estimated Cost:</div>
+                <div class="h4 fw-bold mb-0 text-danger" id="modal-booking-total">$86</div>
+              </div>
+            </div>
+
+            <form id="pf-booking-modal-form" novalidate>
+              <input type="hidden" id="modal-hidden-specs" name="order_specs" value="1000 Visiting Cards">
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Contact Full Name <span class="pf-required-asterisk text-danger">*</span></label>
+                  <input type="text" name="name" id="booking-name" class="form-control" placeholder="e.g. Alexander Vance" required autocomplete="name">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Company or Event Names</label>
+                  <input type="text" name="company" id="booking-company" class="form-control" placeholder="e.g. Vance Publishing / John &amp; Sarah" autocomplete="organization">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Email Address (for Digital Proofs) <span class="pf-required-asterisk text-danger">*</span></label>
+                  <input type="email" name="email" id="booking-email" class="form-control" placeholder="alex@company.com" required autocomplete="email">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Phone / WhatsApp for Press Updates <span class="pf-required-asterisk text-danger">*</span></label>
+                  <input type="tel" name="phone" id="booking-phone" class="form-control" placeholder="+1 (555) 019-2834" required autocomplete="tel">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Target Press / Delivery Date <span class="pf-required-asterisk text-danger">*</span></label>
+                  <input type="date" name="target_date" id="booking-target-date" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Artwork Status</label>
+                  <select name="artwork_status" id="booking-artwork-status" class="form-select">
+                    <option selected>Print-Ready PDF (I have dieline)</option>
+                    <option>Need Pre-Press Design Help</option>
+                    <option>Re-order from Previous Job</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label small fw-bold">Shipping / Delivery Address <span class="pf-required-asterisk text-danger">*</span></label>
+                  <input type="text" name="address" id="booking-address" class="form-control" placeholder="Suite, Street Address, City, Postal Code" required autocomplete="street-address">
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label small fw-bold">Special Print Notes / Pantone PMS Codes</label>
+                  <textarea name="notes" id="booking-notes" class="form-control" rows="2" placeholder="Specific paper preferences, foil die positioning, or split packaging requests..."></textarea>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="bookingTerms" checked required>
+                    <label class="form-check-label small text-secondary" for="bookingTerms">
+                      I agree to receive a digital preflight contract proof via email before physical printing initiates. No charges until proof approval.
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-12 mt-4">
+                  <button type="submit" class="pf-btn pf-btn-primary w-100 py-3 fw-bold text-uppercase d-flex align-items-center justify-content-center gap-2">
+                    Confirm Booking &amp; Reserve Press Slot <i class="bi bi-arrow-right ms-2"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Instant Confirmation View (Shown on Submit) -->
+          <div id="pf-booking-confirmation-view" style="display: none;" class="text-center py-4">
+            <div class="mb-3">
+              <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-success bg-opacity-10 text-success" style="width: 80px; height: 80px; font-size: 2.5rem;">
+                <i class="bi bi-check2-circle"></i>
+              </div>
+            </div>
+            <h4 class="h4 fw-bold mb-2">Order Booking Confirmed!</h4>
+            <p class="text-secondary max-w-500 mx-auto mb-3">Your print production slot has been reserved in our Brooklyn automated facility. A CTP preflight technician is reviewing your dielines.</p>
+            
+            <div class="p-3 bg-light rounded-3 d-inline-block border text-start mb-4" style="background: var(--pf-bg-alt) !important; min-width: 320px;">
+              <div class="small text-secondary">Press Booking Reference:</div>
+              <div class="h5 fw-bold text-danger mb-1" id="pf-booking-ref-slot">PF-BK-89312</div>
+              <div class="small text-secondary"><i class="bi bi-clock me-1"></i> Preflight Proof: Scheduled in &lt; 2 Hours</div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+              <button type="button" class="btn btn-outline-secondary px-4 py-2 w-100 w-sm-auto" style="border-radius: var(--pf-radius-pill);" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary px-4 py-2 w-100 w-sm-auto" id="pf-booking-reset-btn" style="background: var(--pf-primary); border-color: var(--pf-primary); border-radius: var(--pf-radius-pill);">Book Another Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flowing Organic Lavender Wave Divider (Body to Footer) -->
+  <div class="pf-wave-divider" style="background-color: var(--pf-warm-paper);">
+    <svg viewBox="0 0 1440 70" fill="none" preserveAspectRatio="none">
+      <path d="M0,25 C320,75 440,0 720,35 C1000,75 1140,5 1440,25 L1440,100 L0,100 Z" fill="#15091E"></path>
+    </svg>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="pf-search-modal" id="pf-search-modal">
+    <div class="pf-search-inner">
+      <button class="pf-search-close">&times;</button>
+      <form action="services.html" method="get">
+        <input type="text" class="pf-search-input" placeholder="Search booking items..." autofocus>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       Global Footer
+       =================================================================== -->
+  <footer class="pf-footer">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Col 1: Brand Info -->
+        <div class="col-lg-4">
+          <a href="index.html" class="pf-brand mb-3 d-inline-flex align-items-center">
+            <div class="pf-brand-icon">
+              <span>P</span>
+            </div>
+            <span>PRINT<span class="text-danger">FORGE</span></span>
+          </a>
+          <p class="small text-secondary">
+            PrintForge is an elite industrial offset printing press and commercial book manufacturing facility. We engineer tangible print perfection through Heidelberg automated sheetfed technology.
+          </p>
+          <div class="pf-cmyk-strip my-3">
+            <span class="pf-cmyk-c"></span>
+            <span class="pf-cmyk-m"></span>
+            <span class="pf-cmyk-y"></span>
+            <span class="pf-cmyk-k"></span>
+          </div>
+          <div class="pf-footer-social d-flex gap-2 mt-3">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="pf-social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="pf-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="pf-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="pf-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-sm-6 col-lg-2">
+          <h5>Navigation</h5>
+          <ul class="pf-footer-links">
+            <li><a href="index.html">Commercial Offset Printing</a></li>
+            <li><a href="home-2.html">Book Printing Offset</a></li>
+            <li><a href="about.html">About Plant</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="booking.html">Card Booking Model</a></li>
+            <li><a href="blog.html">Press Insights</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="col-sm-6 col-lg-3">
+          <h5>Core Capabilities</h5>
+          <ul class="pf-footer-links">
+            <li><a href="service-details.html">Offset Commercial Printing</a></li>
+            <li><a href="service-details.html">Hardcover &amp; Softcover Books</a></li>
+            <li><a href="service-details.html">Folded Brochures &amp; Menus</a></li>
+            <li><a href="service-details.html">Luxury Rigid Packaging</a></li>
+            <li><a href="service-details.html">Corporate Identity &amp; Cards</a></li>
+            <li><a href="service-details.html">Foil Stamping &amp; Embossing</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Contact -->
+        <div class="col-lg-3">
+          <h5>Press Updates</h5>
+          <p class="small text-secondary">Subscribe for technical paper guides, Pantone release notes, and factory insights.</p>
+          <form class="pf-newsletter-form mb-3">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-sm" placeholder="Your work email..." required>
+              <button class="btn btn-danger btn-sm" type="submit">Join</button>
+            </div>
+          </form>
+          <div class="small text-secondary mt-2">
+            <div><i class="bi bi-geo-alt text-danger me-1"></i> 742 Industrial Pkwy, NY</div>
+            <div><i class="bi bi-envelope text-danger me-1"></i> press@printforge-demo.com</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="pf-footer-bottom text-center">
+        <div class="text-secondary small">
+          &copy; 2026 PrintForge Press &amp; Publishing Ltd. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

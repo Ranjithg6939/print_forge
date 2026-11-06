@@ -1,0 +1,114 @@
+/* ===================================================================
+   PrintForge – RTL Stylesheet (rtl.css)
+   Applied when [dir="rtl"] is set on <html> or <body>
+   =================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .pf-dropdown-menu {
+  left: auto;
+  right: 0;
+  text-align: right;
+}
+
+[dir="rtl"] .pf-dropdown-item:hover,
+[dir="rtl"] .pf-dropdown-item.active {
+  padding-left: 20px;
+  padding-right: 24px;
+}
+
+[dir="rtl"] .pf-link-arrow i {
+  transform: rotate(180deg);
+}
+[dir="rtl"] .pf-link-arrow:hover i {
+  transform: rotate(180deg) translateX(4px);
+}
+
+[dir="rtl"] .pf-btn::before {
+  left: auto;
+  right: -100%;
+}
+[dir="rtl"] .pf-btn:hover::before {
+  transform: skewX(-20deg) translateX(-220%);
+}
+
+[dir="rtl"] .pf-toast {
+  border-left: none;
+  border-right: 4px solid var(--pf-red);
+}
+
+[dir="rtl"] .pf-toast-container {
+  right: auto;
+  left: 24px;
+}
+
+[dir="rtl"] .pf-back-to-top {
+  right: auto;
+  left: 24px;
+}
+
+/* Timeline adjustments for RTL */
+@media (max-width: 1024px) {
+  [dir="rtl"] .pf-timeline-wrap::before,
+  [dir="rtl"] .pf-process-infographic-wrap::before {
+    left: auto;
+    right: 40px;
+  }
+  [dir="rtl"] .pf-milestone-marker,
+  [dir="rtl"] .pf-step-badge-node {
+    left: auto;
+    right: 40px;
+  }
+  [dir="rtl"] .pf-timeline-content-col,
+  [dir="rtl"] .pf-timeline-img-col,
+  [dir="rtl"] .pf-process-step-col-left,
+  [dir="rtl"] .pf-process-step-col-right {
+    padding-left: 0 !important;
+    padding-right: 75px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  [dir="rtl"] .pf-timeline-wrap::before,
+  [dir="rtl"] .pf-process-infographic-wrap::before {
+    right: 24px;
+  }
+  [dir="rtl"] .pf-milestone-marker,
+  [dir="rtl"] .pf-step-badge-node {
+    right: 24px;
+  }
+  [dir="rtl"] .pf-timeline-content-col,
+  [dir="rtl"] .pf-timeline-img-col,
+  [dir="rtl"] .pf-process-step-col-left,
+  [dir="rtl"] .pf-process-step-col-right {
+    padding-left: 0 !important;
+    padding-right: 54px !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  [dir="rtl"] .pf-nav-menu {
+    right: auto;
+    left: -320px;
+    transition: left 0.35s ease;
+  }
+  [dir="rtl"] .pf-nav-menu.open {
+    left: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  [dir="rtl"] .pf-nav-menu {
+    left: auto !important;
+    right: auto !important;
+  }
+}
+
+[dir="rtl"] .pf-select {
+  background-position: left 18px center;
+  padding-left: 44px;
+  padding-right: 18px;
+}

@@ -1,0 +1,393 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+6 0 obj
+<< /Length 4588 >>
+stream
+q
+% Header Banner
+0.35 0.10 0.49 rg
+40 735 532 55 re f
+
+% Header Text
+BT
+/F2 18 Tf
+1 1 1 rg
+55 760 Td
+(PRINTFORGE INDUSTRIAL PRESS FACILITY) Tj
+ET
+
+BT
+/F1 9.5 Tf
+0.9 0.8 1 rg
+55 745 Td
+(TECHNICAL PREFLIGHT & PRESS-READY FILE SPECIFICATIONS - REVISION 2026.4) Tj
+ET
+
+% Decorative Line
+0.85 0.72 0.95 RG
+2 w
+40 730 m 572 730 l S
+
+% Section 1: Overview
+BT
+/F2 12 Tf
+0.2 0.08 0.3 rg
+40 706 Td
+(1. Mandatory PDF/X Standards & Color Spaces) Tj
+ET
+
+BT
+/F1 9 Tf
+0.2 0.2 0.2 rg
+40 690 Td
+(All production press files must be submitted conforming to PDF/X-4:2010 or PDF/X-1a:2001 standards.) Tj
+0 -13 Td
+(- Color Mode: strictly CMYK and validated Pantone Matching System [PMS] Spot Colors.) Tj
+0 -13 Td
+(- RGB, LAB, and DeviceN color profiles will be auto-converted to Fogra 51 / GRACoL 2013.) Tj
+0 -13 Td
+(- Total Area Coverage [TAC / TIC]: Maximum 320% on Coated stock, 280% on Uncoated text.) Tj
+0 -13 Td
+(- Black Generation: Use Rich Black [C:60% M:40% Y:40% K:100%] for large solids; 100% K for body text.) Tj
+ET
+
+% Table 1: Bleed & Tolerances
+0.95 0.93 0.98 rg
+40 562 532 18 re f
+0.8 0.7 0.9 RG
+1 w
+40 562 532 18 re S
+
+BT
+/F2 9 Tf
+0.3 0.1 0.4 rg
+50 567 Td
+(PARAMETER) Tj
+140 0 Td
+(MINIMUM SPECIFICATION) Tj
+160 0 Td
+(TOLERANCE / CRITICAL THRESHOLD) Tj
+ET
+
+% Table Row 1
+0.85 0.85 0.85 RG
+0.5 w
+40 544 m 572 544 l S
+BT
+/F2 8.5 Tf
+0.2 0.2 0.2 rg
+50 548 Td
+(Bleed Margin) Tj
+/F1 8.5 Tf
+140 0 Td
+(3.175 mm [0.125 in] on all 4 sides) Tj
+160 0 Td
+(5.0 mm required for Hardcover cases) Tj
+ET
+
+% Table Row 2
+40 526 m 572 526 l S
+BT
+/F2 8.5 Tf
+0.2 0.2 0.2 rg
+50 530 Td
+(Safety Safe Zone) Tj
+/F1 8.5 Tf
+140 0 Td
+(4.5 mm [0.177 in] inside trim edge) Tj
+160 0 Td
+(Keep text & logos clear of fold/score lines) Tj
+ET
+
+% Table Row 3
+40 508 m 572 508 l S
+BT
+/F2 8.5 Tf
+0.2 0.2 0.2 rg
+50 512 Td
+(Image Resolution) Tj
+/F1 8.5 Tf
+140 0 Td
+(300 DPI at 100% final output size) Tj
+160 0 Td
+(Bitmaps & Line Art must be 1200 DPI) Tj
+ET
+
+% Table Row 4
+40 490 m 572 490 l S
+BT
+/F2 8.5 Tf
+0.2 0.2 0.2 rg
+50 494 Td
+(Vector Line Weight) Tj
+/F1 8.5 Tf
+140 0 Td
+(0.25 pt minimum [0.088 mm]) Tj
+160 0 Td
+(0.50 pt minimum for Reverse/Knockout text) Tj
+ET
+
+% Table Row 5
+40 472 m 572 472 l S
+BT
+/F2 8.5 Tf
+0.2 0.2 0.2 rg
+50 476 Td
+(Font Embedding) Tj
+/F1 8.5 Tf
+140 0 Td
+(100% Embedded or Outlined/Curved) Tj
+160 0 Td
+(TrueType/Type 1 must be OpenType/OTF) Tj
+ET
+
+% Section 2: Special Finishes & Embellishments
+BT
+/F2 12 Tf
+0.3 0.1 0.4 rg
+40 446 Td
+(2. Spot Finishes, Die-Lines & Embellishments Setup) Tj
+ET
+
+BT
+/F1 9 Tf
+0.2 0.2 0.2 rg
+40 430 Td
+(To ensure automated optical die-cutting and Kurz foil registration, follow layer naming standards:) Tj
+0 -13 Td
+(1. Hot Foil Stamping: Create Spot Color named [Foil-Gold] or [Foil-Silver], set to 100% Magenta, OVERPRINT ON.) Tj
+0 -13 Td
+(2. Raised Spot UV: Create Spot Color named [Spot-UV], 100% Cyan, set OVERPRINT ON on dedicated vector layer.) Tj
+0 -13 Td
+(3. Structural Die-Cut: Create 0.5 pt Spot Color line named [Die-Cut] [100% Magenta], 100% stroke.) Tj
+0 -13 Td
+(4. Mechanical Crease: Create 0.5 pt Spot Color line named [Crease] [100% Cyan], dashed 4pt stroke.) Tj
+0 -13 Td
+(5. Kiss-Cut / Sticker: Create Spot Color named [Kiss-Cut] [100% Green], 0.25 pt stroke.) Tj
+ET
+
+% Section 3: Binding Spines
+BT
+/F2 12 Tf
+0.3 0.1 0.4 rg
+40 326 Td
+(3. Spine Bulking & Signature Formula Matrix) Tj
+ET
+
+BT
+/F1 8.5 Tf
+0.2 0.2 0.2 rg
+40 310 Td
+(Calculate spine thickness prior to export using our calibrated Heidelberg press bulking factors:) Tj
+0 -12 Td
+(Spine Width = [Page Count / 2] x Paper Caliper [mm] + Board Caliper [for Hardcover]) Tj
+0 -12 Td
+(- 80 GSM Munken Print Cream: Caliper = 0.120 mm [Bulk factor 1.50]) Tj
+0 -12 Td
+(- 115 GSM Silk Coated Art: Caliper = 0.098 mm [Bulk factor 0.85]) Tj
+0 -12 Td
+(- 150 GSM Heavy Matte Art: Caliper = 0.138 mm [Bulk factor 0.92]) Tj
+0 -12 Td
+(- 3.0 mm European Dense Kappa Binder Board adds 6.0 mm overall to case spine calculations.) Tj
+ET
+
+% Prepress Engineer Callout Box (Positioned cleanly at bottom)
+0.96 0.94 0.98 rg
+40 120 532 60 re f
+0.35 0.10 0.49 RG
+1.5 w
+40 120 532 60 re S
+
+BT
+/F2 10.5 Tf
+0.35 0.10 0.49 rg
+55 160 Td
+(PREPRESS ASSISTANCE & DIRECT INPRESS LINE) Tj
+/F1 8.5 Tf
+0.25 0.25 0.25 rg
+0 -16 Td
+(Have questions about creep calculation, gatefold dielines, or Delta E tolerances? Contact our prepress lab:) Tj
+0 -13 Td
+(Direct Press Hotline: +1 [800] 555-7746  |  Prepress FTP: prepress@printforge-demo.com) Tj
+ET
+
+% Footer
+0.8 0.8 0.8 RG
+1 w
+40 60 m 572 60 l S
+
+BT
+/F1 8 Tf
+0.4 0.4 0.4 rg
+40 46 Td
+(PrintForge Press & Publishing Ltd. - Heidelberg Speedmaster XL 106 & Kolbus Automated Facility - Page 1 of 2) Tj
+ET
+Q
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+8 0 obj
+<< /Length 3195 >>
+stream
+q
+% Header Banner
+0.35 0.10 0.49 rg
+40 735 532 55 re f
+
+% Header Text
+BT
+/F2 18 Tf
+1 1 1 rg
+55 760 Td
+(PRINTFORGE PREFLIGHT VERIFICATION CHECKLIST) Tj
+ET
+
+BT
+/F1 9.5 Tf
+0.9 0.8 1 rg
+55 745 Td
+(14-POINT AUTOMATED PRODUCTION QUALITY ASSURANCE - ISO 12647-2 CERTIFIED) Tj
+ET
+
+% Decorative Line
+0.85 0.72 0.95 RG
+2 w
+40 730 m 572 730 l S
+
+% Checklist 14 Points
+BT
+/F2 11.5 Tf
+0.3 0.1 0.4 rg
+40 706 Td
+(Stage 1: Document Architecture & Geometry Checklist) Tj
+ET
+
+BT
+/F1 9 Tf
+0.2 0.2 0.2 rg
+40 690 Td
+([PASS] 01. Trim Box, Bleed Box, and Media Box accurately defined in PDF header attributes.) Tj
+0 -14 Td
+([PASS] 02. Minimum 3.175 mm bleed provided on all exterior trim edges without truncation.) Tj
+0 -14 Td
+([PASS] 03. Safe margins of 4.5 mm strictly preserved from all page perimeter cutting lines.) Tj
+0 -14 Td
+([PASS] 04. Multi-page booklet files submitted as single consecutive pages [NOT printer spreads].) Tj
+0 -14 Td
+([PASS] 05. Saddle-stitched publications pagination is a multiple of 4 [4, 8, 12, 16, 20...].) Tj
+0 -14 Td
+([PASS] 06. Perfect bound & Smyth-sewn signatures paginated in 8, 16, or 32-page sections.) Tj
+ET
+
+BT
+/F2 11.5 Tf
+0.3 0.1 0.4 rg
+40 575 Td
+(Stage 2: Color, Inking & Screening Verification) Tj
+ET
+
+BT
+/F1 9 Tf
+0.2 0.2 0.2 rg
+40 559 Td
+([PASS] 07. All photographic assets converted to ISO Coated v2 [FOGRA39/51] with Delta E < 1.5.) Tj
+0 -14 Td
+([PASS] 08. Zero RGB, LAB, or untagged device color spaces present in vector or raster assets.) Tj
+0 -14 Td
+([PASS] 09. Total Ink Limit [TIL] does not exceed 320% on Coated and 280% on Uncoated sheets.) Tj
+0 -14 Td
+([PASS] 10. Small black body text [< 18 pt] is 100% Black [C:0 M:0 Y:0 K:100] with Overprint ON.) Tj
+0 -14 Td
+([PASS] 11. White reverse text on dark backgrounds has Overprint OFF to prevent knockout bleed.) Tj
+ET
+
+BT
+/F2 11.5 Tf
+0.3 0.1 0.4 rg
+40 450 Td
+(Stage 3: Typography, Resolution & Embellishments) Tj
+ET
+
+BT
+/F1 9 Tf
+0.2 0.2 0.2 rg
+40 434 Td
+([PASS] 12. All fonts 100% embedded as subsets or converted into vector line curves.) Tj
+0 -14 Td
+([PASS] 13. Raster artwork resolution verified >= 300 DPI at 100% final output reproduction.) Tj
+0 -14 Td
+([PASS] 14. Spot finishes [UV, Foil, Emboss, Dieline] configured on dedicated layers with OVERPRINT.) Tj
+ET
+
+% Prepress Engineer Approval Block (Completely isolated below checklist)
+0.96 0.94 0.98 rg
+40 210 532 135 re f
+0.35 0.10 0.49 RG
+1.5 w
+40 210 532 135 re S
+
+BT
+/F2 11 Tf
+0.35 0.10 0.49 rg
+55 322 Td
+(HEIDELBERG PRINECT AUTOMATED WORKFLOW CERTIFICATION) Tj
+/F1 8.5 Tf
+0.25 0.25 0.25 rg
+0 -17 Td
+(This job specification complies with ISO 12647-2 commercial offset standards and is certified for) Tj
+0 -13 Td
+(automated CTP plate imaging on Kodak Sonora 2400 DPI thermal systems.) Tj
+0 -16 Td
+(Inspection Engineer: Dr. Evelyn Sterling, Head of Color Science & Prepress) Tj
+0 -13 Td
+(Plant Facility: PrintForge Press Plant 1, 742 Industrial Pkwy, New York, NY) Tj
+0 -13 Td
+(Direct Production Desk: +1 [800] 555-7746  |  www.printforge-demo.com) Tj
+ET
+
+% Footer
+0.8 0.8 0.8 RG
+1 w
+40 60 m 572 60 l S
+
+BT
+/F1 8 Tf
+0.4 0.4 0.4 rg
+40 46 Td
+(PrintForge Press & Publishing Ltd. - Heidelberg Speedmaster XL 106 & Kolbus Automated Facility - Page 2 of 2) Tj
+ET
+Q
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000218 00000 n 
+0000000320 00000 n 
+0000000456 00000 n 
+0000005096 00000 n 
+0000005232 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+8479
+%%EOF

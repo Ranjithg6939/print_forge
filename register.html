@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+  <link rel="alternate icon" href="favicon.svg" type="image/svg+xml">
+  <title>Create Production Account – PrintForge</title>
+  <meta name="description" content="Register for a PrintForge client account to submit print jobs, download preflight reports, and request instant sample boxes.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.8">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=2.8">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body class="pf-grid-bg d-flex flex-column min-vh-100 justify-content-center py-5">
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-9 col-lg-6">
+        
+        <!-- Brand Header -->
+        <div class="text-center mb-4">
+          <a href="index.html" class="pf-brand justify-content-center mb-2">
+            <div class="pf-brand-icon"><span>P</span></div>
+            <span>PRINT<span class="text-danger">FORGE</span></span>
+          </a>
+          <p class="text-secondary small">Join Over 1,200 Publishers & Agencies Worldwide</p>
+        </div>
+
+        <!-- Register Card -->
+        <div class="pf-card p-4 p-md-5 shadow-lg">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="h4 fw-bold mb-0">Create Account</h2>
+            <button class="pf-theme-toggle pf-action-icon-btn" title="Toggle Theme" style="width:34px;height:34px;">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+          </div>
+
+          <form id="pf-register-form" novalidate>
+            <div class="pf-form-group">
+              <label class="pf-label">Full Name <span class="pf-required-asterisk text-danger">*</span></label>
+              <div class="input-group">
+                <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-person text-secondary"></i></span>
+                <input type="text" id="reg-name" class="pf-input border-start-0" placeholder="e.g. Marcus Vance" required autocomplete="name">
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6 pf-form-group">
+                <label class="pf-label">Work Email <span class="pf-required-asterisk text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-envelope text-secondary"></i></span>
+                  <input type="email" id="reg-email" class="pf-input border-start-0" placeholder="marcus@company.com" required autocomplete="email">
+                </div>
+              </div>
+
+              <div class="col-md-6 pf-form-group">
+                <label class="pf-label">Phone Number <span class="pf-required-asterisk text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-telephone text-secondary"></i></span>
+                  <input type="tel" id="reg-phone" class="pf-input border-start-0" placeholder="+1 (555) 000-0000" required autocomplete="tel">
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6 pf-form-group">
+                <label class="pf-label">Password <span class="pf-required-asterisk text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-lock text-secondary"></i></span>
+                  <input type="password" id="reg-pass" class="pf-input border-start-0" placeholder="Create strong password" required autocomplete="new-password">
+                </div>
+                <small class="text-secondary d-block mt-1" style="font-size:0.75rem;"><i class="bi bi-shield-lock me-1"></i> 8+ chars: uppercase, lowercase, number &amp; symbol</small>
+              </div>
+
+              <div class="col-md-6 pf-form-group">
+                <label class="pf-label">Confirm Password <span class="pf-required-asterisk text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-shield-lock text-secondary"></i></span>
+                  <input type="password" id="reg-confirm" class="pf-input border-start-0" placeholder="Re-type password" required autocomplete="new-password">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" id="termsCheck" required checked>
+              <label class="form-check-label small text-secondary" for="termsCheck">
+                I agree to the PrintForge <a href="#termsModal" class="text-danger" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a> &amp; Prepress Quality Guidelines.
+              </label>
+            </div>
+
+            <button type="submit" class="pf-btn pf-btn-primary w-100 pf-btn-lg mb-3">
+              Register Account <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+
+            <div class="text-center small text-secondary">
+              Already registered? <a href="login.html" class="fw-bold text-danger">Sign In Here</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="index.html" class="small text-secondary"><i class="bi bi-arrow-left me-1"></i> Return to Homepage</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms & Prepress Guidelines Modal -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+        <div class="modal-header border-bottom px-4 py-3">
+          <h5 class="modal-title fw-bold" id="termsModalLabel">Terms of Service &amp; Prepress Standards</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 text-secondary small">
+          <h6 class="fw-bold text-dark">1. File Submission &amp; Preflight</h6>
+          <p>All artwork submitted to PrintForge must be in print-ready PDF/X-4 format with a minimum of 300 DPI resolution at 100% scale. A standard 3mm bleed margin must be included across all exterior trim edges.</p>
+          
+          <h6 class="fw-bold text-dark mt-3">2. Color Fidelity &amp; Fogra Standards</h6>
+          <p>Press runs are calibrated to ISO 12647-2 (Fogra 51/52). RGB files will be converted to CMYK using certified color profiles. Critical spot colors must be clearly designated using Pantone solid coated formulas.</p>
+          
+          <h6 class="fw-bold text-dark mt-3">3. Production Tolerances</h6>
+          <p>Commercial offset registration and die-cutting tolerances are maintained within ±0.5mm. Final paper stock bulk may vary by ±5% based on mill humidity and manufacturing variance.</p>
+          
+          <h6 class="fw-bold text-dark mt-3">4. Proof Approval &amp; Turnaround</h6>
+          <p>Turnaround timelines commence upon formal client sign-off of the digital contract proof or press hard proof. Any subsequent revisions require plate re-imaging and may adjust ship dates.</p>
+        </div>
+        <div class="modal-footer border-top px-4 py-3 bg-light-subtle">
+          <button type="button" class="btn btn-danger w-100" data-bs-dismiss="modal">I Understand &amp; Agree</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

@@ -1,0 +1,857 @@
+/* ===================================================================
+   PrintForge – Responsive Stylesheet (responsive.css)
+   Breakpoints:
+   - Full Desktop:       >= 1025px
+   - Desktop & Tablet:   768px - 1024px (Desktop horizontal menu)
+   - Mobile:             320px - 767px (Hamburger drawer menu)
+   =================================================================== */
+
+/* Tablet & Content Layout (<= 1024px) */
+@media (max-width: 1024px) {
+  /* Alternating Timeline adjustments for tablet */
+  .pf-timeline-wrap::before {
+    left: 40px;
+  }
+  .pf-milestone-marker {
+    left: 40px;
+  }
+  .pf-timeline-content-col {
+    padding-left: 75px !important;
+  }
+  .pf-timeline-img-col {
+    padding-left: 75px !important;
+    margin-top: 15px;
+  }
+}
+
+/* ===================================================================
+   DESKTOP NAVIGATION (992px to 1024px & pf-force-desktop-nav)
+   When menu items fit properly without overlapping.
+   =================================================================== */
+@media (min-width: 992px) and (max-width: 1024px) {
+  .pf-mobile-toggle {
+    display: none !important;
+  }
+
+  .pf-mobile-close {
+    display: none !important;
+  }
+
+  .pf-nav-overlay {
+    display: none !important;
+  }
+
+  .pf-navbar {
+    padding: 0.75rem 0;
+  }
+
+  .pf-brand {
+    font-size: 1.25rem !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .pf-brand-icon {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .pf-nav-menu {
+    display: flex !important;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    background: transparent !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    gap: 0.85rem !important;
+    overflow-y: visible !important;
+    z-index: auto !important;
+    margin: 0 !important;
+  }
+
+  .pf-nav-item {
+    border: none !important;
+    width: auto !important;
+  }
+
+  .pf-nav-link {
+    padding: 6px 9px !important;
+    font-size: 0.84rem !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    border-radius: 6px !important;
+  }
+
+  .pf-nav-actions {
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .pf-nav-actions .pf-btn {
+    display: inline-flex !important;
+    padding: 7px 14px !important;
+    font-size: 0.8125rem !important;
+  }
+
+  .pf-action-icon-btn {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 1rem !important;
+  }
+
+  .pf-rtl-toggle {
+    font-size: 0.7rem !important;
+    padding: 5px 9px !important;
+  }
+
+  .pf-dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    min-width: 250px !important;
+    width: max-content !important;
+    background: var(--pf-surface) !important;
+    border: 1px solid var(--pf-border-color) !important;
+    box-shadow: 0 16px 40px -8px rgba(94, 39, 130, 0.16) !important;
+    border-radius: 12px !important;
+    padding: 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(12px) !important;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    z-index: 1040 !important;
+  }
+
+  .pf-dropdown:hover .pf-dropdown-menu,
+  .pf-dropdown:focus-within .pf-dropdown-menu,
+  .pf-dropdown.open .pf-dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(6px) !important;
+  }
+
+  .pf-dropdown-item {
+    display: flex !important;
+    padding: 10px 14px !important;
+    font-size: 0.8125rem !important;
+  }
+}
+
+/* ===================================================================
+   HAMBURGER MENU (320px to 991.98px)
+   - Mobile: 320px–767px (Always hamburger)
+   - Tablet: 768px–991px (Retains hamburger because 7 desktop links
+     would otherwise overlap/cut off RTL & action buttons).
+   =================================================================== */
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 54px !important;
+  }
+
+  .pf-navbar {
+    padding: 0.55rem 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+  }
+
+  .pf-brand {
+    font-size: clamp(1.05rem, 3.8vw, 1.25rem) !important;
+    gap: 8px !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .pf-brand-icon {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1.05rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .pf-nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+  }
+
+  .pf-action-icon-btn {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 0.95rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .pf-rtl-toggle {
+    padding: 4px 8px !important;
+    font-size: 0.68rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .pf-nav-actions .pf-btn {
+    display: none !important;
+  }
+
+  .pf-mobile-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 8px;
+    font-size: 1.2rem !important;
+    flex-shrink: 0 !important;
+    border: 1px solid var(--pf-border-color);
+    background: transparent;
+    color: var(--pf-ink);
+    cursor: pointer;
+    margin-left: 0;
+  }
+
+  .pf-nav-menu {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: min(300px, 86vw) !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    background: #FFFFFF !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 75px 20px 30px !important;
+    box-shadow: -8px 0 32px rgba(117, 67, 154, 0.22) !important;
+    gap: 0 !important;
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    z-index: 1060 !important;
+    overflow-y: auto !important;
+    border-left: 1px solid var(--pf-border-color) !important;
+  }
+
+  .pf-nav-menu.open {
+    right: 0 !important;
+  }
+
+  .pf-nav-item {
+    border-bottom: 1px solid rgba(223, 212, 228, 0.45) !important;
+    width: 100% !important;
+    padding: 2px 0 !important;
+  }
+
+  .pf-nav-link {
+    padding: 12px 16px !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    color: var(--pf-ink) !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+  }
+
+  .pf-nav-link:hover,
+  .pf-nav-link:focus-visible {
+    background-color: rgba(121, 34, 165, 0.08) !important;
+    color: var(--pf-primary-deep) !important;
+  }
+
+  .pf-nav-link.active {
+    color: var(--pf-primary-deep) !important;
+    background-color: rgba(121, 34, 165, 0.12) !important;
+    font-weight: 800 !important;
+  }
+
+  .pf-dropdown.open > .pf-nav-link {
+    color: var(--pf-primary-deep) !important;
+    font-weight: 800 !important;
+  }
+
+  .pf-dropdown > .pf-nav-link i {
+    transition: transform 0.25s ease !important;
+  }
+
+  .pf-dropdown.open > .pf-nav-link i {
+    transform: rotate(180deg) !important;
+    color: var(--pf-primary-deep) !important;
+  }
+
+  .pf-dropdown-menu {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: var(--pf-bg-alt) !important;
+    padding: 6px 0 12px !important;
+    display: none !important;
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  .pf-dropdown.open .pf-dropdown-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+
+  .pf-dropdown-item {
+    padding: 10px 16px !important;
+    color: var(--pf-text-primary) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    border-radius: 6px !important;
+  }
+
+  /* Close button inside mobile menu */
+  .pf-mobile-close {
+    position: absolute !important;
+    top: 18px !important;
+    right: 18px !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    color: var(--pf-ink) !important;
+    cursor: pointer !important;
+    z-index: 1070 !important;
+    padding: 4px 8px !important;
+  }
+
+  /* Overlay */
+  .pf-nav-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 1045 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
+  }
+  .pf-nav-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  /* Process Infographic Step Center Alignment (About Us) */
+  .pf-process-infographic-wrap::before {
+    display: none !important;
+  }
+  .pf-step-badge-node {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 0 auto 1.5rem auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 58px !important;
+    height: 58px !important;
+  }
+  .pf-step-badge-node .step-lbl {
+    font-size: 0.55rem !important;
+    line-height: 1 !important;
+  }
+  .pf-step-badge-node .step-num {
+    font-size: 0.95rem !important;
+    line-height: 1.1 !important;
+  }
+  .pf-process-step-col-left,
+  .pf-process-step-col-right {
+    padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+    padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+    width: 100% !important;
+  }
+  .pf-step-img-card,
+  .pf-step-content-card,
+  .pf-subtypes-box {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Price Row Perfect Center Alignment */
+  .pf-box-price-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+  .pf-box-price {
+    display: inline-flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
+    gap: 6px !important;
+    margin: 0 !important;
+  }
+  .pf-box-unit-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* Mobile Devices (<= 767px) */
+@media (max-width: 767px) {
+  .pf-topbar {
+    display: none;
+  }
+
+  /* Form Textarea Polish: Prevents Placeholder Cutoff & Unwanted Scrollbars */
+  .pf-textarea {
+    min-height: 140px !important;
+    padding: 12px 14px !important;
+    font-size: 0.9rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Section 2 Capability Statistics Strip Alignment Polish */
+  .pf-stats-strip {
+    padding: 1.75rem 0 !important;
+  }
+
+  .pf-stat-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding: 8px 4px !important;
+    height: 100% !important;
+  }
+
+  .pf-stat-icon {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    font-size: 1.6rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    margin-top: 3px !important;
+  }
+
+  .pf-stat-num {
+    font-size: clamp(1.45rem, 4.5vw, 1.95rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .pf-stat-label {
+    font-size: clamp(0.72rem, 2.2vw, 0.84rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Floating Back to Top Button Mobile Clearance */
+  .pf-back-to-top {
+    bottom: 12px !important;
+    right: 12px !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.95rem !important;
+    box-shadow: 0 4px 14px rgba(117, 67, 154, 0.35) !important;
+    z-index: 990 !important;
+  }
+
+  /* Client Logos Mobile Column Alignment Polish */
+  .pf-client-logos {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 18px !important;
+  }
+
+  .pf-client-logo-item {
+    width: min(230px, 90%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    font-size: 1.15rem !important;
+    gap: 14px !important;
+    margin: 0 auto !important;
+  }
+
+  .pf-client-logo-item i {
+    width: 28px !important;
+    text-align: center !important;
+    font-size: 1.35rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Process Step Rows Mobile Clearance Buffer */
+  .pf-process-step-row {
+    margin-bottom: 3rem !important;
+  }
+
+  /* Machinery List Mobile Hover No-Clip */
+  .pf-machinery-item:hover {
+    transform: none !important;
+    padding-left: 1.25rem !important;
+  }
+
+  .pf-machinery-badge {
+    margin-right: 4px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .pf-hero-headline {
+    font-size: 2.25rem;
+  }
+
+  .pf-hero-desc {
+    font-size: 1rem;
+  }
+
+  .pf-pricing-featured {
+    transform: none;
+  }
+
+  .pf-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-timeline-wrap::before {
+    left: 24px;
+  }
+  .pf-milestone-marker {
+    left: 24px;
+    width: 44px;
+    height: 44px;
+  }
+  .pf-timeline-content-col,
+  .pf-timeline-img-col {
+    padding-left: 54px !important;
+  }
+
+  .pf-service-img-wrap {
+    height: 190px;
+  }
+
+  .pf-toast {
+    min-width: auto;
+    width: calc(100vw - 32px);
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .pf-btn-lg {
+    padding: 12px 24px;
+    font-size: 0.9375rem;
+  }
+
+  /* Dashboard on mobile */
+  .pf-dashboard-sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 1050;
+    height: 100vh;
+  }
+  .pf-dashboard-sidebar.show {
+    transform: translateX(0);
+  }
+  .pf-dashboard-main {
+    margin-left: 0 !important;
+  }
+}
+
+/* Extra Small Screens (<= 575.98px: Small Mobile) */
+@media (max-width: 575.98px) {
+  .pf-hero-headline {
+    font-size: clamp(1.75rem, 5vw + 0.5rem, 2.15rem);
+    line-height: 1.25;
+  }
+
+  .pf-section-title {
+    font-size: clamp(1.5rem, 4.5vw + 0.5rem, 1.85rem);
+  }
+
+  .pf-hero-actions,
+  .pf-hero-btns {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .pf-hero-actions .btn,
+  .pf-hero-btns .btn,
+  .pf-hero-actions .pf-btn,
+  .pf-hero-btns .pf-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Full-width Modal & CTA Action Buttons on Small Mobile */
+  .modal-body .d-flex.flex-column.flex-sm-row button,
+  .modal-body .d-flex.flex-column.flex-sm-row a,
+  .modal-footer .btn,
+  section .d-flex.flex-column.flex-sm-row a.pf-btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .modal-dialog {
+    margin: 12px auto;
+    max-width: calc(100vw - 24px);
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .pf-badge-node {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Configurator Product Chips on Mobile */
+  .pf-type-chips {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+  .pf-type-chip {
+    padding: 8px 6px 10px !important;
+    min-height: 180px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .pf-type-chip-title {
+    font-size: 0.82rem !important;
+    white-space: normal !important;
+  }
+  .pf-cat-price-badge {
+    font-size: 0.65rem !important;
+    padding: 2px 5px !important;
+    white-space: nowrap !important;
+  }
+  .pf-type-chip-sub {
+    font-size: 0.68rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Featured Article Footer on Mobile */
+  .pf-featured-footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.85rem !important;
+  }
+  .pf-featured-footer .pf-link-arrow {
+    white-space: nowrap !important;
+    font-size: 0.92rem !important;
+  }
+
+  /* Addon card min-height safety */
+  .pf-addon-card {
+    height: auto !important;
+    min-height: 48px !important;
+  }
+
+  /* Configurator Card & Stepper Polish on Mobile */
+  .pf-calc-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 16px !important;
+  }
+
+  .pf-stepper-slider-box {
+    padding: 0.85rem !important;
+    gap: 0.85rem !important;
+  }
+
+  .pf-stepper-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    padding: 6px 10px !important;
+  }
+
+  .pf-stepper-input {
+    flex: 1 !important;
+    width: 0 !important;
+    min-width: 50px !important;
+    font-size: 1.15rem !important;
+    text-align: center !important;
+  }
+
+  .pf-stepper-btn {
+    width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .pf-slider-wrap {
+    width: 100% !important;
+  }
+
+  /* Live Order Summary Mobile Spacing & Row Alignment */
+  .pf-calc-summary {
+    padding: 1.5rem 1.15rem !important;
+    border-radius: 16px !important;
+  }
+
+  .pf-calc-summary .pf-summary-row {
+    padding: 8px 0 !important;
+    font-size: clamp(0.76rem, 2.5vw, 0.88rem) !important;
+    gap: 8px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .pf-calc-summary .pf-summary-row span:first-child {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .pf-calc-summary .pf-summary-row span:last-child {
+    white-space: nowrap !important;
+    text-align: right !important;
+  }
+
+  .pf-calc-summary .pf-summary-row #calc-discount {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    white-space: nowrap !important;
+  }
+
+  .pf-calc-summary .pf-summary-total {
+    padding-top: 1rem !important;
+    margin-top: 0.35rem !important;
+  }
+
+  .pf-calc-summary .pf-total-price {
+    font-size: clamp(1.85rem, 6vw, 2.35rem) !important;
+  }
+
+  .pf-print-sides-wrap .pf-addon-card {
+    padding: 8px 6px !important;
+    min-width: 0 !important;
+  }
+}
+
+/* Ultra Small Screens (<= 380px: 320px - 375px) */
+@media (max-width: 380px) {
+  .pf-navbar {
+    padding: 0.5rem 0;
+    gap: 4px;
+  }
+
+  .pf-brand {
+    font-size: 1.125rem;
+    gap: 6px;
+  }
+
+  .pf-brand-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .pf-nav-actions {
+    gap: 4px;
+  }
+
+  .pf-action-icon-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .pf-rtl-toggle {
+    padding: 3px 6px;
+    font-size: 0.65rem;
+  }
+
+  .pf-mobile-toggle {
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+  }
+
+  .pf-hero-headline {
+    font-size: 1.6rem;
+  }
+
+  .pf-section-title {
+    font-size: 1.35rem;
+  }
+
+  .pf-type-chips {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .pf-type-chip:last-child {
+    grid-column: auto !important;
+  }
+
+  .pf-card-body,
+  .card-body {
+    padding: 14px !important;
+  }
+
+  .pf-nav-menu {
+    width: 88vw;
+    padding: 70px 16px 24px;
+  }
+
+  .pf-stat-item {
+    gap: 8px !important;
+    padding: 6px 2px !important;
+  }
+
+  .pf-stat-icon {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    font-size: 1.35rem !important;
+  }
+
+  .pf-stat-num {
+    font-size: 1.4rem !important;
+  }
+
+  .pf-stat-label {
+    font-size: 0.68rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .btn, .pf-btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}

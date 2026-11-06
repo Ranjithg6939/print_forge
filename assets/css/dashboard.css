@@ -1,0 +1,234 @@
+/* ===================================================================
+   PrintForge – Admin Dashboard Stylesheet (dashboard.css)
+   Theme: Purple & Lavender Editorial Graphic Design
+   =================================================================== */
+
+.pf-dashboard-body {
+  background-color: #F8F4FA;
+  min-height: 100vh;
+}
+[data-theme="dark"] .pf-dashboard-body {
+  background-color: #0A030F;
+}
+
+.pf-dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.pf-dashboard-sidebar {
+  width: 260px;
+  background-color: #12061A;
+  color: #D8B8E8;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  z-index: 1040;
+}
+[data-theme="dark"] .pf-dashboard-sidebar {
+  background-color: #0D0414;
+  border-right: 1px solid #2E1642;
+}
+
+.pf-dash-brand {
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-family: var(--pf-font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+.pf-dash-brand:hover {
+  color: #fff;
+}
+
+.pf-dash-nav {
+  padding: 1.25rem 0.75rem;
+  list-style: none;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.pf-dash-nav-item {
+  margin-bottom: 4px;
+}
+
+.pf-dash-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--pf-radius-sm);
+  color: #C2B6C7;
+  font-family: var(--pf-font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: var(--pf-transition);
+}
+.pf-dash-nav-link i {
+  font-size: 1.15rem;
+}
+.pf-dash-nav-link:hover,
+.pf-dash-nav-link.active {
+  color: #FFFFFF;
+  background-color: rgba(185, 131, 209, 0.16);
+}
+.pf-dash-nav-link.active {
+  background: linear-gradient(135deg, #B983D1 0%, #5E2782 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(94, 39, 130, 0.4);
+}
+
+.pf-dash-user-bottom {
+  padding: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pf-dash-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #B983D1;
+}
+
+/* Main Dashboard Area */
+.pf-dashboard-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pf-dash-topbar {
+  background: var(--pf-surface);
+  border-bottom: 1px solid var(--pf-border-color);
+  padding: 1rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.pf-dash-search {
+  max-width: 380px;
+  width: 100%;
+  position: relative;
+}
+.pf-dash-search input {
+  padding-left: 38px;
+}
+.pf-dash-search i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--pf-primary-deep);
+}
+
+.pf-dash-content {
+  padding: 2rem 1.75rem;
+  flex-grow: 1;
+}
+
+/* Metric / KPI Cards */
+.pf-metric-card {
+  background: var(--pf-surface);
+  border: 1px solid var(--pf-border-color);
+  border-radius: var(--pf-radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--pf-shadow-sm);
+  transition: var(--pf-transition);
+}
+.pf-metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--pf-shadow-md);
+  border-color: var(--pf-primary);
+}
+.pf-metric-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--pf-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.pf-metric-icon.red,
+.pf-metric-icon.purple { background: rgba(185, 131, 209, 0.2); color: #5E2782; }
+.pf-metric-icon.blue { background: rgba(94, 39, 130, 0.14); color: #5E2782; }
+.pf-metric-icon.green { background: rgba(25, 135, 84, 0.14); color: #198754; }
+.pf-metric-icon.amber { background: rgba(216, 184, 232, 0.4); color: #5E2782; }
+
+.pf-metric-val {
+  font-family: var(--pf-font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--pf-ink);
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+.pf-metric-label {
+  font-size: 0.8125rem;
+  color: var(--pf-steel-grey);
+  font-weight: 600;
+}
+.pf-metric-trend {
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* Dashboard Panel Cards */
+.pf-dash-panel {
+  background: var(--pf-surface);
+  border: 1px solid var(--pf-border-color);
+  border-radius: var(--pf-radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--pf-shadow-sm);
+  margin-bottom: 1.5rem;
+}
+.pf-dash-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.pf-dash-panel-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--pf-ink);
+  margin: 0;
+}
+
+/* Badges for status */
+.pf-status-badge {
+  padding: 5px 12px;
+  border-radius: var(--pf-radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.pf-status-completed { background: rgba(25, 135, 84, 0.14); color: #198754; }
+.pf-status-pending { background: rgba(185, 131, 209, 0.25); color: #5E2782; }
+.pf-status-processing { background: rgba(94, 39, 130, 0.18); color: #5E2782; }
+.pf-status-cancelled { background: rgba(220, 53, 69, 0.14); color: #dc3545; }
+
+[data-theme="dark"] .pf-status-pending { background: rgba(185, 131, 209, 0.25); color: #CE9FE4; }
+[data-theme="dark"] .pf-status-processing { background: rgba(167, 101, 211, 0.25); color: #CE9FE4; }
+[data-theme="dark"] .pf-metric-icon.red,
+[data-theme="dark"] .pf-metric-icon.purple,
+[data-theme="dark"] .pf-metric-icon.blue,
+[data-theme="dark"] .pf-metric-icon.amber { color: #CE9FE4; }

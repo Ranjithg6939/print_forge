@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+  <link rel="alternate icon" href="favicon.svg" type="image/svg+xml">
+  <title>Admin & Production Dashboard – PrintForge</title>
+  <meta name="description" content="PrintForge production management portal: live press runs, order tracking, prepress approvals, client messages, and sales analytics.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.8">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=2.8">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="pf-dashboard-body">
+
+  <div class="pf-dashboard-wrapper">
+    <!-- ===================================================================
+         DASHBOARD SIDEBAR
+         =================================================================== -->
+    <aside class="pf-dashboard-sidebar">
+      <div class="pf-dash-brand">
+        <div class="pf-brand-icon" style="width:32px;height:32px;font-size:1rem;"><span>P</span></div>
+        <span>PRINT<span class="text-danger">FORGE</span></span>
+        <button class="pf-dash-sidebar-close d-lg-none ms-auto bg-transparent border-0 text-white"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <ul class="pf-dash-nav">
+        <li class="pf-dash-nav-item">
+          <a href="#overview" class="pf-dash-nav-link active">
+            <i class="bi bi-speedometer2"></i> <span>Overview</span>
+          </a>
+        </li>
+        <li class="pf-dash-nav-item">
+          <a href="#analytics" class="pf-dash-nav-link">
+            <i class="bi bi-graph-up-arrow"></i> <span>Analytics</span>
+          </a>
+        </li>
+        <li class="pf-dash-nav-item">
+          <a href="#orders" class="pf-dash-nav-link">
+            <i class="bi bi-box-seam"></i> <span>Orders & Runs</span>
+            <span class="badge bg-danger ms-auto">12</span>
+          </a>
+        </li>
+        <li class="pf-dash-nav-item">
+          <a href="#users" class="pf-dash-nav-link">
+            <i class="bi bi-people"></i> <span>Users & Clients</span>
+          </a>
+        </li>
+        <li class="pf-dash-nav-item">
+          <a href="#messages" class="pf-dash-nav-link">
+            <i class="bi bi-chat-left-dots"></i> <span>Messages</span>
+            <span class="badge bg-primary ms-auto">3</span>
+          </a>
+        </li>
+        <li class="pf-dash-nav-item">
+          <a href="services.html" class="pf-dash-nav-link">
+            <i class="bi bi-gear-wide"></i> <span>Services Catalog</span>
+          </a>
+        </li>
+        <li class="pf-dash-nav-item">
+          <a href="samples.html" class="pf-dash-nav-link">
+            <i class="bi bi-images"></i> <span>Samples Archive</span>
+          </a>
+        </li>
+        <li class="pf-dash-nav-item">
+          <a href="blog.html" class="pf-dash-nav-link">
+            <i class="bi bi-journal-text"></i> <span>Blog Posts</span>
+          </a>
+        </li>
+        <li class="pf-dash-nav-item">
+          <a href="#settings" class="pf-dash-nav-link">
+            <i class="bi bi-sliders"></i> <span>Settings</span>
+          </a>
+        </li>
+        <li class="pf-dash-nav-item mt-4">
+          <a href="login.html" class="pf-dash-nav-link text-danger pf-logout-btn">
+            <i class="bi bi-box-arrow-right"></i> <span>Sign Out</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="pf-dash-user-bottom">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Admin Avatar" class="pf-dash-user-avatar">
+        <div class="overflow-hidden">
+          <div class="fw-bold small text-white text-truncate pf-user-display-name">Production Lead</div>
+          <div class="text-secondary" style="font-size: 0.75rem;">Plant Admin (Shift 1)</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===================================================================
+         MAIN DASHBOARD WORKSPACE
+         =================================================================== -->
+    <main class="pf-dashboard-main">
+      <!-- Topbar Header -->
+      <header class="pf-dash-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="pf-dash-sidebar-toggle d-lg-none btn btn-light btn-sm"><i class="bi bi-list fs-5"></i></button>
+          
+          <div class="pf-dash-search d-none d-sm-block">
+            <i class="bi bi-search"></i>
+            <input type="text" class="pf-input form-control-sm" placeholder="Search orders, press runs, clients...">
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <button class="pf-rtl-toggle">RTL</button>
+          
+          <!-- Theme Toggle -->
+          <button class="pf-action-icon-btn pf-theme-toggle" title="Toggle Mode">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- Notifications Dropdown -->
+          <button class="pf-action-icon-btn position-relative" title="Notifications">
+            <i class="bi bi-bell"></i>
+            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+          </button>
+
+          <!-- Return to site -->
+          <a href="index.html" class="pf-btn pf-btn-dark btn-sm py-2">
+            View Live Site <i class="bi bi-box-arrow-up-right ms-1"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- Dashboard Body Content -->
+      <div class="pf-dash-content">
+        <!-- Breadcrumb & Greeting -->
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+          <div>
+            <h1 class="h3 fw-bold mb-1">Production Operations Overview</h1>
+            <p class="small text-secondary mb-0">Heidelberg Speedmaster XL 106 & Kolbus Hardcover lines operating normally.</p>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="pf-btn pf-btn-outline pf-btn-sm" onclick="window.print()"><i class="bi bi-printer me-1"></i> Export Report</button>
+            <a href="contact.html" class="pf-btn pf-btn-primary pf-btn-sm"><i class="bi bi-plus-lg me-1"></i> New Print Job</a>
+          </div>
+        </div>
+
+        <!-- KPI / Metrics Grid (4 Cards) -->
+        <div class="row g-3 mb-4">
+          <!-- Metric 1: Revenue -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="pf-metric-card">
+              <div>
+                <div class="pf-metric-label">Monthly Gross Revenue</div>
+                <div class="pf-metric-val">$248,650</div>
+                <span class="pf-metric-trend text-success"><i class="bi bi-arrow-up"></i> +14.2% from last month</span>
+              </div>
+              <div class="pf-metric-icon green"><i class="bi bi-currency-dollar"></i></div>
+            </div>
+          </div>
+
+          <!-- Metric 2: Total Orders -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="pf-metric-card">
+              <div>
+                <div class="pf-metric-label">Total Active Press Runs</div>
+                <div class="pf-metric-val">42</div>
+                <span class="pf-metric-trend text-primary"><i class="bi bi-check2"></i> 18 Completed today</span>
+              </div>
+              <div class="pf-metric-icon red"><i class="bi bi-printer"></i></div>
+            </div>
+          </div>
+
+          <!-- Metric 3: Pending Prepress Approvals -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="pf-metric-card">
+              <div>
+                <div class="pf-metric-label">Pending Preflight Proofs</div>
+                <div class="pf-metric-val">7</div>
+                <span class="pf-metric-trend text-warning"><i class="bi bi-clock-history"></i> Awaiting client signoff</span>
+              </div>
+              <div class="pf-metric-icon amber"><i class="bi bi-file-earmark-check"></i></div>
+            </div>
+          </div>
+
+          <!-- Metric 4: Total Publisher Accounts -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="pf-metric-card">
+              <div>
+                <div class="pf-metric-label">Enterprise Clients</div>
+                <div class="pf-metric-val">1,280</div>
+                <span class="pf-metric-trend text-success"><i class="bi bi-arrow-up"></i> +32 new this quarter</span>
+              </div>
+              <div class="pf-metric-icon blue"><i class="bi bi-buildings"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monthly Sales Chart Panel -->
+        <div class="row g-4 mb-4">
+          <div class="col-xl-8">
+            <div class="pf-dash-panel h-100 mb-0">
+              <div class="pf-dash-panel-header">
+                <div>
+                  <h3 class="pf-dash-panel-title">Monthly Printing Output & Volume ($k)</h3>
+                  <p class="small text-secondary mb-0">Comparison of Commercial Sheetfed Offset vs. Specialist Book Binding Runs</p>
+                </div>
+                <span class="badge bg-light text-dark border">FY 2026 Live</span>
+              </div>
+              <div style="height: 320px; position: relative;">
+                <canvas id="pf-sales-chart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Plant Status -->
+          <div class="col-xl-4">
+            <div class="pf-dash-panel h-100 mb-0">
+              <div class="pf-dash-panel-header">
+                <h3 class="pf-dash-panel-title">Press Equipment Health</h3>
+                <span class="pf-status-badge pf-status-completed">All Units Nominal</span>
+              </div>
+
+              <div class="mb-3">
+                <div class="d-flex justify-content-between small fw-bold mb-1">
+                  <span>Heidelberg Speedmaster XL 106-8</span>
+                  <span class="text-success">94% Capacity</span>
+                </div>
+                <div class="progress" style="height:6px;">
+                  <div class="progress-bar bg-danger" style="width: 94%;"></div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <div class="d-flex justify-content-between small fw-bold mb-1">
+                  <span>Kolbus Publica PUR Binder</span>
+                  <span class="text-primary">78% Capacity</span>
+                </div>
+                <div class="progress" style="height:6px;">
+                  <div class="progress-bar bg-dark" style="width: 78%;"></div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <div class="d-flex justify-content-between small fw-bold mb-1">
+                  <span>Bobst SP 102 Autoplaten Cutter</span>
+                  <span class="text-success">86% Capacity</span>
+                </div>
+                <div class="progress" style="height:6px;">
+                  <div class="progress-bar bg-danger" style="width: 86%;"></div>
+                </div>
+              </div>
+
+              <div class="border-top pt-3 mt-4">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="pf-stat-icon red" style="width:40px;height:40px;"><i class="bi bi-droplet-half"></i></div>
+                  <div>
+                    <div class="small fw-bold">Soy Ink Inventory</div>
+                    <div class="text-secondary" style="font-size:0.75rem;">Cyan 92%, Magenta 88%, Yellow 94%, Black 76%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Orders Table with Live Search and Filter -->
+        <div class="pf-dash-panel">
+          <div class="pf-dash-panel-header flex-wrap gap-2">
+            <div>
+              <h3 class="pf-dash-panel-title">Recent Press Runs & Client Orders</h3>
+              <p class="small text-secondary mb-0">Live production tracking across prepress, inking, and binding.</p>
+            </div>
+            
+            <div class="d-flex align-items-center gap-2">
+              <input type="text" id="pf-order-search" class="pf-input form-control-sm" placeholder="Filter orders..." style="width: 180px;">
+              <select id="pf-order-status-filter" class="pf-select form-control-sm" style="width: 140px;">
+                <option value="all">All Statuses</option>
+                <option value="completed">Completed</option>
+                <option value="processing">Processing</option>
+                <option value="pending">Pending</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th>Job ID</th>
+                  <th>Client / Publisher</th>
+                  <th>Job Description</th>
+                  <th>Quantity</th>
+                  <th>Substrate</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="pf-order-row" data-status="processing">
+                  <td class="fw-bold">#PF-8841</td>
+                  <td>Sterling Academic Press</td>
+                  <td>The Typography Encyclopedia (Hardcover)</td>
+                  <td>10,000</td>
+                  <td>Munken Pure 120 GSM</td>
+                  <td><span class="pf-status-badge pf-status-processing"><i class="bi bi-arrow-repeat me-1"></i> Press Run</span></td>
+                  <td class="fw-semibold">$18,450</td>
+                  <td><button class="btn btn-outline-dark btn-sm py-0 pf-btn-inspect" data-job="#PF-8841" data-client="Sterling Academic Press" data-title="The Typography Encyclopedia (Hardcover)" data-qty="10,000" data-stock="Munken Pure 120 GSM" data-status="Press Run" data-status-class="pf-status-processing" data-total="$18,450" data-notes="Specs &amp; plate layout validated on Heidelberg Speedmaster. Kolbus casing line assigned for thread-sewn binding.">Inspect</button></td>
+                </tr>
+
+                <tr class="pf-order-row" data-status="completed">
+                  <td class="fw-bold">#PF-8840</td>
+                  <td>Aura Skincare Ltd.</td>
+                  <td>Embossed Folding Carton Boxes</td>
+                  <td>25,000</td>
+                  <td>SBS Board 350 GSM</td>
+                  <td><span class="pf-status-badge pf-status-completed"><i class="bi bi-check-circle me-1"></i> Dispatched</span></td>
+                  <td class="fw-semibold">$12,200</td>
+                  <td><button class="btn btn-outline-dark btn-sm py-0 pf-btn-inspect" data-job="#PF-8840" data-client="Aura Skincare Ltd." data-title="Embossed Folding Carton Boxes" data-qty="25,000" data-stock="SBS Board 350 GSM" data-status="Dispatched" data-status-class="pf-status-completed" data-total="$12,200" data-notes="Bill of lading generated. Carrier tracking #DHL-PF9912 active. Final batch signed off.">Inspect</button></td>
+                </tr>
+
+                <tr class="pf-order-row" data-status="pending">
+                  <td class="fw-bold">#PF-8839</td>
+                  <td>Horizon Literary Journal</td>
+                  <td>Quarterly Issue No. 44 (PUR Softcover)</td>
+                  <td>5,000</td>
+                  <td>Silk Coated 150 GSM</td>
+                  <td><span class="pf-status-badge pf-status-pending"><i class="bi bi-hourglass me-1"></i> CTP Proofing</span></td>
+                  <td class="fw-semibold">$6,800</td>
+                  <td><button class="btn btn-outline-dark btn-sm py-0 pf-btn-inspect" data-job="#PF-8839" data-client="Horizon Literary Journal" data-title="Quarterly Issue No. 44 (PUR Softcover)" data-qty="5,000" data-stock="Silk Coated 150 GSM" data-status="CTP Proofing" data-status-class="pf-status-pending" data-total="$6,800" data-notes="Preflight report: 300 DPI verified, 3mm bleed checked, PDF/X-4 certified. Color bars aligned to Fogra 51.">Inspect</button></td>
+                </tr>
+
+                <tr class="pf-order-row" data-status="processing">
+                  <td class="fw-bold">#PF-8838</td>
+                  <td>Vanguard Financial</td>
+                  <td>Annual Shareholder Monograph</td>
+                  <td>15,000</td>
+                  <td>Arctic Volume 170 GSM</td>
+                  <td><span class="pf-status-badge pf-status-processing"><i class="bi bi-arrow-repeat me-1"></i> Foil Stamping</span></td>
+                  <td class="fw-semibold">$22,900</td>
+                  <td><button class="btn btn-outline-dark btn-sm py-0 pf-btn-inspect" data-job="#PF-8838" data-client="Vanguard Financial" data-title="Annual Shareholder Monograph" data-qty="15,000" data-stock="Arctic Volume 170 GSM" data-status="Foil Stamping" data-status-class="pf-status-processing" data-total="$22,900" data-notes="Kurz metallic rose gold foil stamping station 3 in production. Precision temperature calibrated to 135°C.">Inspect</button></td>
+                </tr>
+
+                <tr class="pf-order-row" data-status="completed">
+                  <td class="fw-bold">#PF-8837</td>
+                  <td>Nexus Design Studio</td>
+                  <td>Luxury Cotton Duplexed Cards</td>
+                  <td>2,500</td>
+                  <td>Wild Cotton 600 GSM</td>
+                  <td><span class="pf-status-badge pf-status-completed"><i class="bi bi-check-circle me-1"></i> Completed</span></td>
+                  <td class="fw-semibold">$3,150</td>
+                  <td><button class="btn btn-outline-dark btn-sm py-0 pf-btn-inspect" data-job="#PF-8837" data-client="Nexus Design Studio" data-title="Luxury Cotton Duplexed Cards" data-qty="2,500" data-stock="Wild Cotton 600 GSM" data-status="Completed" data-status-class="pf-status-completed" data-total="$3,150" data-notes="Job completed, inspected by QC Team, and archived in historical order log.">Inspect</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- User Management Table & Latest Messages Section -->
+        <div class="row g-4">
+          <!-- Users Table -->
+          <div class="col-lg-7">
+            <div class="pf-dash-panel h-100 mb-0">
+              <div class="pf-dash-panel-header">
+                <div>
+                  <h3 class="pf-dash-panel-title">Registered Publisher Accounts</h3>
+                  <p class="small text-secondary mb-0">Active client production accounts</p>
+                </div>
+                <input type="text" id="pf-user-search" class="pf-input form-control-sm" placeholder="Search users..." style="width: 150px;">
+              </div>
+
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Publisher / Name</th>
+                      <th>Account Role</th>
+                      <th>Total Orders</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="pf-user-row">
+                      <td class="d-flex align-items-center gap-2">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=80&q=80" width="32" height="32" class="rounded-circle object-fit-cover" alt="User">
+                        <div>
+                          <div class="fw-bold small">Marcus Vance</div>
+                          <div class="text-secondary" style="font-size: 0.75rem;">Sterling Press</div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-light text-dark border">Enterprise Publisher</span></td>
+                      <td class="fw-bold">24</td>
+                      <td><span class="badge bg-success">Active</span></td>
+                    </tr>
+
+                    <tr class="pf-user-row">
+                      <td class="d-flex align-items-center gap-2">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=80&q=80" width="32" height="32" class="rounded-circle object-fit-cover" alt="User">
+                        <div>
+                          <div class="fw-bold small">Elena Rostova</div>
+                          <div class="text-secondary" style="font-size: 0.75rem;">Veloce Luxury</div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-light text-dark border">Brand Director</span></td>
+                      <td class="fw-bold">18</td>
+                      <td><span class="badge bg-success">Active</span></td>
+                    </tr>
+
+                    <tr class="pf-user-row">
+                      <td class="d-flex align-items-center gap-2">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" width="32" height="32" class="rounded-circle object-fit-cover" alt="User">
+                        <div>
+                          <div class="fw-bold small">David Chen</div>
+                          <div class="text-secondary" style="font-size: 0.75rem;">Horizon Press</div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-light text-dark border">Managing Editor</span></td>
+                      <td class="fw-bold">31</td>
+                      <td><span class="badge bg-success">Active</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Messages -->
+          <div class="col-lg-5">
+            <div class="pf-dash-panel h-100 mb-0">
+              <div class="pf-dash-panel-header">
+                <h3 class="pf-dash-panel-title">Latest Prepress Inquiries</h3>
+                <span class="badge bg-danger">3 Unread</span>
+              </div>
+
+              <div class="list-group list-group-flush">
+                <div class="list-group-item px-0 py-3 bg-transparent">
+                  <div class="d-flex justify-content-between small text-secondary mb-1">
+                    <span class="fw-bold text-dark">Marcus Vance (Sterling Press)</span>
+                    <span>14m ago</span>
+                  </div>
+                  <p class="small text-secondary mb-1">"We have uploaded the revised jacket dieline with 18mm spine calculation for Job #PF-8841."</p>
+                  <button type="button" class="btn btn-link p-0 small text-danger fw-semibold text-decoration-none pf-reply-btn" data-recipient="Marcus Vance (Sterling Press)" data-job="#PF-8841" data-quote="We have uploaded the revised jacket dieline with 18mm spine calculation for Job #PF-8841.">Reply via Prepress Chat &rarr;</button>
+                </div>
+
+                <div class="list-group-item px-0 py-3 bg-transparent">
+                  <div class="d-flex justify-content-between small text-secondary mb-1">
+                    <span class="fw-bold text-dark">Elena Rostova (Veloce)</span>
+                    <span>1h ago</span>
+                  </div>
+                  <p class="small text-secondary mb-1">"Can we add a Kurz rose gold foil pass to the cosmetic box lid batch?"</p>
+                  <button type="button" class="btn btn-link p-0 small text-danger fw-semibold text-decoration-none pf-reply-btn" data-recipient="Elena Rostova (Veloce)" data-job="#PF-8840" data-quote="Can we add a Kurz rose gold foil pass to the cosmetic box lid batch?">Reply via Prepress Chat &rarr;</button>
+                </div>
+
+                <div class="list-group-item px-0 py-3 bg-transparent" id="pf-msg-david">
+                  <div class="d-flex justify-content-between small text-secondary mb-1">
+                    <span class="fw-bold text-dark">David Chen (Horizon)</span>
+                    <span>3h ago</span>
+                  </div>
+                  <p class="small text-secondary mb-1">"Proof approved! Please proceed with high-speed 5,000 run on the Kolbus line."</p>
+                  <button type="button" class="btn btn-link p-0 small text-danger fw-semibold text-decoration-none pf-ack-btn" data-recipient="David Chen (Horizon)" data-job="#PF-8839">Acknowledge Run &rarr;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Job Inspect Modal -->
+  <div class="modal fade" id="pfJobInspectModal" tabindex="-1" aria-labelledby="pfJobInspectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+        <div class="modal-header border-bottom px-4 py-3">
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-danger rounded-pill px-3 py-2 fs-6" id="inspectModalJobId">#PF-8841</span>
+            <h5 class="modal-title fw-bold mb-0" id="pfJobInspectModalLabel">Job Work Order Specification</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              <label class="text-muted small text-uppercase fw-bold mb-1">Client / Publisher</label>
+              <div class="fw-bold text-dark fs-5" id="inspectModalClient">Sterling Academic Press</div>
+            </div>
+            <div class="col-md-6">
+              <label class="text-muted small text-uppercase fw-bold mb-1">Current Production Stage</label>
+              <div><span class="pf-status-badge pf-status-processing fs-6 px-3 py-1" id="inspectModalStatus">Press Run</span></div>
+            </div>
+            <div class="col-12">
+              <label class="text-muted small text-uppercase fw-bold mb-1">Item Title &amp; Format</label>
+              <div class="fw-semibold text-dark" id="inspectModalTitle">The Typography Encyclopedia (Hardcover)</div>
+            </div>
+            <div class="col-sm-4">
+              <label class="text-muted small text-uppercase fw-bold mb-1">Quantity</label>
+              <div class="fw-bold" id="inspectModalQty">10,000 units</div>
+            </div>
+            <div class="col-sm-4">
+              <label class="text-muted small text-uppercase fw-bold mb-1">Paper Substrate</label>
+              <div class="fw-bold" id="inspectModalStock">Munken Pure 120 GSM</div>
+            </div>
+            <div class="col-sm-4">
+              <label class="text-muted small text-uppercase fw-bold mb-1">Contract Total</label>
+              <div class="fw-bold text-danger fs-5" id="inspectModalTotal">$18,450</div>
+            </div>
+          </div>
+
+          <div class="p-3 bg-light rounded-3 border mb-3">
+            <label class="text-muted small text-uppercase fw-bold mb-1 d-block"><i class="bi bi-shield-check text-success me-1"></i> Prepress &amp; Quality Notes</label>
+            <p class="mb-0 text-secondary small" id="inspectModalNotes">Specs and plate layout validated on Heidelberg Speedmaster. Kolbus casing line assigned for thread-sewn binding.</p>
+          </div>
+        </div>
+        <div class="modal-footer border-top px-4 py-3 bg-light-subtle d-flex justify-content-between">
+          <span class="small text-muted"><i class="bi bi-clock-history me-1"></i> Press log synchronized real-time</span>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger" id="inspectModalDownloadBtn"><i class="bi bi-file-earmark-pdf me-1"></i> Export Work Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prepress Reply Modal -->
+  <div class="modal fade" id="pfPrepressReplyModal" tabindex="-1" aria-labelledby="pfPrepressReplyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+        <div class="modal-header border-bottom px-4 py-3">
+          <div>
+            <h5 class="modal-title fw-bold mb-0" id="pfPrepressReplyModalLabel">Prepress Dispatch Chat</h5>
+            <small class="text-muted" id="replyModalSubtitle">Replying to client</small>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="p-3 bg-light rounded-3 border mb-3">
+            <div class="small fw-bold text-dark mb-1" id="replyModalContextAuthor">Client Message:</div>
+            <div class="small text-secondary fst-italic" id="replyModalContextText">"..."</div>
+          </div>
+          <form id="prepressReplyForm" novalidate>
+            <div class="mb-3">
+              <label for="prepressReplyText" class="form-label small fw-bold text-dark">Your Response / Engineering Notes <span class="pf-required-asterisk text-danger">*</span></label>
+              <textarea class="form-control" id="prepressReplyText" rows="4" placeholder="Enter production feedback, press timing, or dieline approval (min 10 characters)..." required></textarea>
+            </div>
+            <div class="d-flex justify-content-end gap-2">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-danger"><i class="bi bi-send me-1"></i> Send Dispatch Reply</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1090">
+    <div id="pfDashboardToast" class="toast align-items-center text-bg-dark border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body d-flex align-items-center gap-2" id="pfToastMessage">
+          <i class="bi bi-check-circle-fill text-success fs-5"></i>
+          <span>Action completed successfully.</span>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

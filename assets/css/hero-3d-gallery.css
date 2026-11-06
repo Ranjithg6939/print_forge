@@ -1,0 +1,1110 @@
+/* ===================================================================
+   PrintForge ?" 3D Circular Image Gallery & Video Hero
+   assets/css/hero-3d-gallery.css
+   =================================================================== */
+
+/* Hero Container */
+.pf-hero-3d {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #170A21;
+  padding: 3.5rem 0 3rem !important;
+}
+
+.pf-hero-3d .pf-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  transform: scale(1.05);
+  transition: transform 8s ease;
+  filter: saturate(1.2);
+}
+
+.pf-hero-3d:hover .pf-hero-bg {
+  transform: scale(1.1);
+}
+
+.pf-hero-3d .pf-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 45%, rgba(121, 34, 165, 0.28) 0%, transparent 60%),
+              linear-gradient(90deg, rgba(23, 10, 33, 0.98) 0%, rgba(23, 10, 33, 0.92) 48%, rgba(23, 10, 33, 0.72) 100%);
+  pointer-events: none;
+}
+
+/* Subtle Entrance Animations for Hero Text */
+@keyframes pfFadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pfFadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pf-hero-animate-badge {
+  animation: pfFadeSlideDown 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.pf-hero-animate-title {
+  animation: pfFadeSlideUp 0.85s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.pf-hero-animate-desc {
+  animation: pfFadeSlideUp 0.85s 0.24s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.pf-hero-animate-btns {
+  animation: pfFadeSlideUp 0.85s 0.36s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.pf-hero-animate-services {
+  animation: pfFadeSlideUp 0.85s 0.48s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Services Highlight Mini Cards */
+.pf-hero-service-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(206, 159, 228, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+.pf-hero-service-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(206, 159, 228, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 16px rgba(121, 34, 165, 0.2);
+}
+
+.pf-service-icon-pill {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(121, 34, 165, 0.35) 0%, rgba(99, 24, 136, 0.2) 100%);
+  border: 1px solid rgba(206, 159, 228, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #CE9FE4;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.pf-hero-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pf-hero-bullet-list li {
+  font-size: 0.77rem;
+  font-weight: 600;
+  color: #D8C7E6;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.pf-hero-bullet-list li i {
+  color: #E2BDF5 !important;
+  font-size: 0.88rem;
+  margin-top: -1px;
+}
+
+/* ===================================================================
+   3D Circular Stage & Toolbar
+   =================================================================== */
+.pf-hero-stage-container {
+  position: relative;
+  width: 100%;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Gallery Top Toolbar */
+.pf-gallery-toolbar {
+  background: rgba(26, 12, 38, 0.75);
+  border: 1px solid rgba(206, 159, 228, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  max-width: 580px;
+  margin: 0 auto 12px;
+  width: 100%;
+  z-index: 5;
+  transition: opacity 0.35s ease;
+}
+
+.pf-pulse-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #22C55E;
+  display: inline-block;
+  box-shadow: 0 0 10px #22C55E;
+  animation: pfPulseGlow 1.8s infinite;
+}
+
+@keyframes pfPulseGlow {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+.pf-stage-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(206, 159, 228, 0.25);
+  color: #EDE5F4;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 50rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.pf-stage-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #CE9FE4;
+  color: #FFFFFF;
+}
+
+.pf-stage-btn-primary {
+  background: linear-gradient(135deg, #7922A5 0%, #4A126B 100%);
+  border-color: #CE9FE4;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(121, 34, 165, 0.4);
+}
+
+.pf-stage-btn-primary:hover {
+  background: linear-gradient(135deg, #9B38D1 0%, #681991 100%);
+  box-shadow: 0 6px 20px rgba(121, 34, 165, 0.6);
+  transform: translateY(-1px);
+}
+
+/* ===================================================================
+   3D Circular Gallery Mathematics (Panoramic Cylindrical Arena)
+   =================================================================== */
+.pf-3d-gallery-wrap {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  perspective: 1100px;
+  perspective-origin: 50% 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.pf-3d-gallery-wrap.video-active {
+  opacity: 0;
+  transform: scale(0.88) translateY(20px);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+/* Cylindrical Stage Floor & Ambient Glow */
+.pf-3d-stage-floor {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  max-width: 580px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(142, 45, 197, 0.45) 0%, rgba(99, 24, 136, 0.22) 40%, rgba(23, 10, 33, 0) 70%);
+  box-shadow: 0 0 50px rgba(121, 34, 165, 0.35);
+  pointer-events: none;
+  filter: blur(14px);
+  z-index: 0;
+}
+
+.pf-3d-scene {
+  position: relative;
+  width: 165px;
+  height: 280px;
+  transform-style: preserve-3d;
+  z-index: 1;
+}
+
+.pf-3d-cylinder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Individual 3D Card (Tall & Full Color) */
+.pf-3d-card {
+  position: absolute;
+  width: 165px;
+  height: 280px;
+  left: 0;
+  top: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #12051C;
+  border: 1.5px solid rgba(206, 159, 228, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75), 0 0 20px rgba(121, 34, 165, 0.28);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  cursor: pointer;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.45s cubic-bezier(0.2, 0.9, 0.3, 1), opacity 0.35s ease;
+}
+
+.pf-3d-card.is-front-focus {
+  border-color: #E2BDF5;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(206, 159, 228, 0.75);
+}
+
+/* Selected Image Moving to Front & Focus Effect */
+.pf-3d-card.is-selected-focus {
+  border-color: #FFFFFF !important;
+  box-shadow: 0 32px 85px rgba(0, 0, 0, 0.98), 0 0 50px rgba(206, 159, 228, 0.95), 0 0 80px rgba(121, 34, 165, 0.6) !important;
+  z-index: 80 !important;
+}
+
+/* Static Card Image (Full Vibrant Color - Never Grayscale!) */
+.pf-3d-card-img,
+.pf-3d-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  z-index: 1;
+  filter: saturate(1.18) contrast(1.05);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s ease;
+}
+
+/* In-Card Video (Plays automatically when stopped/hovered) */
+.pf-3d-card-vid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+  background-color: #0E0416;
+  filter: saturate(1.15) contrast(1.04);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Active Video Playing State on Card */
+.pf-3d-card.is-video-playing {
+  border-color: #E2BDF5;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.88), 0 0 35px rgba(206, 159, 228, 0.75);
+}
+
+.pf-3d-card.is-video-playing .pf-3d-card-vid {
+  opacity: 1;
+}
+
+.pf-3d-card.is-video-playing .pf-3d-card-img,
+.pf-3d-card.is-video-playing img {
+  opacity: 0;
+}
+
+.pf-3d-card:hover .pf-3d-card-img {
+  transform: scale(1.06);
+}
+
+.pf-3d-card:hover {
+  border-color: #E2BDF5;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(206, 159, 228, 0.7);
+}
+
+/* Top Corner Video Cancel / Close Button */
+.pf-card-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(14, 4, 22, 0.85);
+  border: 1px solid rgba(206, 159, 228, 0.45);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.7);
+  pointer-events: none;
+  z-index: 4;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pf-3d-card.is-video-playing .pf-card-close-btn,
+.pf-3d-card.is-selected-focus .pf-card-close-btn {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.pf-card-close-btn:hover {
+  background: #DC2626;
+  border-color: #F87171;
+  color: #FFFFFF;
+  transform: scale(1.15);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.5);
+}
+
+/* Card Bottom Overlay & Title (Consistent Height & Perfect Alignment on All Cards) */
+.pf-3d-card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px 12px 12px;
+  background: linear-gradient(180deg, rgba(10, 3, 18, 0) 0%, rgba(10, 3, 18, 0.76) 24%, rgba(10, 3, 18, 0.94) 55%, rgba(10, 3, 18, 0.99) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+  z-index: 2;
+  box-sizing: border-box;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+}
+
+/* Hide description words & overlay when video is playing */
+.pf-3d-card.is-video-playing .pf-3d-card-overlay,
+.pf-3d-card.is-selected-focus.is-video-playing .pf-3d-card-overlay {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(16px);
+  pointer-events: none !important;
+}
+
+.pf-3d-card-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #F1E5F8;
+  margin-bottom: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.pf-3d-card-tag i {
+  font-size: 0.78rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF5C7A;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.9));
+  flex-shrink: 0;
+}
+
+.pf-3d-card-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.98), 0 2px 8px rgba(0, 0, 0, 0.95), 0 4px 16px rgba(0, 0, 0, 0.85);
+  word-break: normal;
+}
+
+/* Center Play Icon (Visible by default, hidden during video playback) */
+.pf-card-center-play,
+.pf-card-hover-play {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(23, 10, 33, 0.72);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  opacity: 0.92;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55), 0 0 16px rgba(121, 34, 165, 0.35);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.pf-card-center-play i,
+.pf-card-hover-play i {
+  margin-left: 3px;
+  line-height: 1;
+}
+
+.pf-3d-card:hover .pf-card-center-play,
+.pf-3d-card:hover .pf-card-hover-play {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(121, 34, 165, 0.88);
+  border-color: #E2BDF5;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.7), 0 0 24px rgba(206, 159, 228, 0.6);
+}
+
+/* Hidden during video playback */
+.pf-3d-card.is-video-playing .pf-card-center-play,
+.pf-3d-card.is-video-playing .pf-card-hover-play {
+  opacity: 0 !important;
+  transform: translate(-50%, -50%) scale(0.6) !important;
+  pointer-events: none !important;
+}
+
+
+/* ===================================================================
+   Responsive Media Queries
+   =================================================================== */
+@media (max-width: 1199.98px) {
+  .pf-3d-gallery-wrap {
+    height: 400px;
+    perspective: 950px;
+  }
+  .pf-3d-scene,
+  .pf-3d-card {
+    width: 155px;
+    height: 265px;
+  }
+  .pf-3d-stage-floor {
+    max-width: 480px;
+    height: 45px;
+  }
+  .pf-3d-card-title {
+    font-size: 0.82rem;
+  }
+  .pf-3d-card-tag {
+    font-size: 0.6rem;
+  }
+  .pf-3d-card-tag i {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .pf-hero-3d {
+    padding-top: 2.5rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .pf-hero-stage-container {
+    min-height: 380px;
+    margin-top: 1.5rem;
+  }
+  .pf-3d-gallery-wrap {
+    height: 380px;
+    perspective: 850px;
+  }
+  .pf-3d-scene,
+  .pf-3d-card {
+    width: 140px;
+    height: 245px;
+  }
+  .pf-3d-stage-floor {
+    max-width: 400px;
+    height: 40px;
+  }
+  .pf-3d-card-title {
+    font-size: 0.78rem;
+  }
+  .pf-3d-card-tag {
+    font-size: 0.58rem;
+  }
+  .pf-3d-card-tag i {
+    font-size: 0.66rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pf-hero-stage-container {
+    min-height: 320px;
+  }
+  .pf-3d-gallery-wrap {
+    height: 320px;
+    perspective: 700px;
+  }
+  .pf-3d-scene,
+  .pf-3d-card {
+    width: 110px;
+    height: 185px;
+  }
+  .pf-3d-stage-floor {
+    max-width: 320px;
+    height: 35px;
+  }
+  .pf-3d-card-title {
+    font-size: 0.72rem;
+  }
+  .pf-3d-card-tag {
+    font-size: 0.54rem;
+  }
+  .pf-3d-card-tag i {
+    font-size: 0.62rem;
+  }
+}
+
+/* ===================================================================
+   PRINTFORGE 3D 360-DEGREE VISITING CARD SHOWCASE
+   =================================================================== */
+
+.pf-vcard-showcase {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+/* Pause on hover directly on the 3D card */
+.pf-vcard-stage:hover .pf-vcard-flipper,
+.pf-vcard-stage:hover .pf-vcard-shadow {
+  animation-play-state: paused;
+}
+
+.pf-vcard-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(121, 34, 165, 0.16);
+  border: 1px solid rgba(185, 131, 209, 0.35);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #E2C2F7;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+}
+
+.pf-vcard-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #22C55E;
+  box-shadow: 0 0 10px #22C55E;
+  animation: pfDotPulse 1.8s infinite;
+}
+
+@keyframes pfDotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+/* 3D Perspective Stage - Enlarged Dimension */
+.pf-vcard-stage {
+  position: relative;
+  width: 440px;
+  height: 255px;
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rotating 3D Card Flipper - Enlarged Dimension */
+.pf-vcard-flipper {
+  position: relative;
+  width: 440px;
+  height: 255px;
+  transform-style: preserve-3d;
+  animation: pfVcardSpin360 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: grab;
+}
+
+.pf-vcard-flipper:active {
+  cursor: grabbing;
+}
+
+.pf-vcard-flipper.is-paused {
+  animation-play-state: paused !important;
+}
+
+.pf-vcard-flipper.is-locked-front {
+  animation: none !important;
+  transform: rotateY(0deg) rotateX(4deg) !important;
+}
+
+.pf-vcard-flipper.is-locked-back {
+  animation: none !important;
+  transform: rotateY(180deg) rotateX(-4deg) !important;
+}
+
+/* 360-Degree Continuous Spin Keyframes */
+@keyframes pfVcardSpin360 {
+  0% {
+    transform: rotateY(0deg) rotateX(7deg);
+  }
+  25% {
+    transform: rotateY(90deg) rotateX(-5deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotateX(-7deg);
+  }
+  75% {
+    transform: rotateY(270deg) rotateX(5deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(7deg);
+  }
+}
+
+/* Card Faces (Front & Back) */
+.pf-vcard-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+/* FRONT FACE */
+.pf-vcard-front {
+  background: linear-gradient(135deg, #1A0D28 0%, #0F0619 45%, #240F37 100%);
+  border: 1.5px solid rgba(229, 169, 60, 0.65);
+  box-shadow: 
+    0 24px 50px rgba(0, 0, 0, 0.75),
+    0 0 28px rgba(121, 34, 165, 0.35),
+    inset 0 0 0 1px rgba(255, 224, 130, 0.35),
+    inset 0 0 22px rgba(0, 0, 0, 0.6);
+  padding: 22px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: rotateY(0deg) translateZ(1px);
+}
+
+/* BACK FACE */
+.pf-vcard-back {
+  background: linear-gradient(135deg, #140822 0%, #0A0312 55%, #1B0A2E 100%);
+  border: 1.5px solid rgba(185, 131, 209, 0.65);
+  box-shadow: 
+    0 24px 50px rgba(0, 0, 0, 0.75),
+    0 0 28px rgba(121, 34, 165, 0.35),
+    inset 0 0 0 1px rgba(226, 194, 247, 0.35),
+    inset 0 0 22px rgba(0, 0, 0, 0.6);
+  padding: 22px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+/* Dynamic Foil Gleam / Sheen Effect */
+.pf-vcard-gleam {
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 220%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 246, 213, 0.08) 35%,
+    rgba(255, 224, 130, 0.35) 48%,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 224, 130, 0.35) 52%,
+    rgba(255, 246, 213, 0.08) 65%,
+    transparent 80%
+  );
+  transform: rotate(-15deg);
+  pointer-events: none;
+  animation: pfGleamSweep 6s ease-in-out infinite alternate;
+}
+
+@keyframes pfGleamSweep {
+  0% { transform: translateX(-40%) rotate(-15deg); opacity: 0.3; }
+  50% { opacity: 0.85; }
+  100% { transform: translateX(40%) rotate(-15deg); opacity: 0.3; }
+}
+
+/* Crop & Registration Crosshair Marks */
+.pf-vcard-mark {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.pf-vcard-mark::before,
+.pf-vcard-mark::after {
+  content: '';
+  position: absolute;
+  background-color: #E5A93C;
+}
+
+.pf-mark-tl { top: 6px; left: 6px; }
+.pf-mark-tl::before { top: 0; left: 0; width: 10px; height: 1px; }
+.pf-mark-tl::after { top: 0; left: 0; width: 1px; height: 10px; }
+
+.pf-mark-tr { top: 6px; right: 6px; }
+.pf-mark-tr::before { top: 0; right: 0; width: 10px; height: 1px; }
+.pf-mark-tr::after { top: 0; right: 0; width: 1px; height: 10px; }
+
+.pf-mark-bl { bottom: 6px; left: 6px; }
+.pf-mark-bl::before { bottom: 0; left: 0; width: 10px; height: 1px; }
+.pf-mark-bl::after { bottom: 0; left: 0; width: 1px; height: 10px; }
+
+.pf-mark-br { bottom: 6px; right: 6px; }
+.pf-mark-br::before { bottom: 0; right: 0; width: 10px; height: 1px; }
+.pf-mark-br::after { bottom: 0; right: 0; width: 1px; height: 10px; }
+
+/* Front Elements */
+.pf-vcard-front-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pf-vcard-emblem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pf-vcard-emblem-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #FFE082 0%, #D4AF37 40%, #AA771C 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1rem;
+  color: #12071B;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.45);
+}
+
+.pf-vcard-finishing-tag {
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #E5A93C;
+  background: rgba(229, 169, 60, 0.12);
+  border: 1px solid rgba(229, 169, 60, 0.35);
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+
+.pf-vcard-front-center {
+  text-align: center;
+  margin: auto 0;
+}
+
+.pf-vcard-brand-title {
+  font-size: 2.15rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  margin: 0;
+  line-height: 1.1;
+  color: #FFFFFF;
+}
+
+.pf-vcard-brand-gold {
+  background: linear-gradient(135deg, #FFF6D5 0%, #FFE082 30%, #D4AF37 60%, #FFD54F 85%, #AA771C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.45));
+}
+
+.pf-vcard-front-tagline {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: #CBB0E0;
+  text-transform: uppercase;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.pf-vcard-front-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(229, 169, 60, 0.25);
+  font-size: 0.70rem;
+  font-weight: 600;
+  color: #A993BA;
+}
+
+.pf-vcard-front-footer span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pf-vcard-front-footer i {
+  color: #E5A93C;
+  font-size: 0.78rem;
+}
+
+/* Back Elements */
+.pf-vcard-back-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pf-vcard-person-name {
+  font-size: 1.10rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.pf-vcard-person-role {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #B983D1;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pf-vcard-seal {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px dashed #E5A93C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E5A93C;
+  font-size: 0.88rem;
+}
+
+.pf-vcard-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px 14px;
+  margin: 8px 0;
+}
+
+.pf-vcard-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #EAE3F2;
+  white-space: nowrap;
+}
+
+.pf-vcard-contact-item i {
+  color: #E5A93C;
+  font-size: 0.82rem;
+  flex-shrink: 0;
+}
+
+.pf-vcard-back-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(185, 131, 209, 0.25);
+}
+
+.pf-vcard-machine-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #B983D1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pf-vcard-machine-tag i {
+  color: #E5A93C;
+  font-size: 0.82rem;
+}
+
+.pf-vcard-qr-box {
+  width: 32px;
+  height: 32px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.pf-vcard-qr-mock {
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(#12071B 40%, transparent 40%),
+    linear-gradient(45deg, #12071B 25%, transparent 25%, transparent 75%, #12071B 75%, #12071B),
+    linear-gradient(45deg, #12071B 25%, transparent 25%, transparent 75%, #12071B 75%, #12071B);
+  background-size: 6px 6px, 8px 8px, 8px 8px;
+  background-position: 0 0, 0 0, 4px 4px;
+}
+
+/* Floor Shadow Synchronized to 360 Spin - Enlarged Dimension */
+.pf-vcard-shadow {
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 380px;
+  height: 26px;
+  background: radial-gradient(ellipse at center, rgba(121, 34, 165, 0.45) 0%, rgba(0, 0, 0, 0.6) 35%, transparent 75%);
+  border-radius: 50%;
+  filter: blur(7px);
+  pointer-events: none;
+  animation: pfVcardShadowPulse 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes pfVcardShadowPulse {
+  0%, 100% {
+    width: 380px;
+    opacity: 0.7;
+    filter: blur(7px);
+  }
+  25%, 75% {
+    width: 75px;
+    opacity: 0.3;
+    filter: blur(4px);
+  }
+  50% {
+    width: 380px;
+    opacity: 0.7;
+    filter: blur(7px);
+  }
+}
+
+/* User Controls */
+.pf-vcard-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2rem;
+  background: rgba(23, 10, 33, 0.6);
+  border: 1px solid rgba(185, 131, 209, 0.3);
+  border-radius: 999px;
+  padding: 5px 8px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.pf-vcard-ctrl-btn {
+  background: transparent;
+  border: none;
+  color: #E2C2F7;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.pf-vcard-ctrl-btn:hover,
+.pf-vcard-ctrl-btn.active {
+  background: linear-gradient(135deg, #7922A5 0%, #B983D1 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(121, 34, 165, 0.4);
+}
+
+@media (max-width: 575.98px) {
+  .pf-vcard-stage,
+  .pf-vcard-flipper {
+    width: min(290px, calc(100vw - 32px));
+    height: 175px;
+  }
+  .pf-vcard-brand-title {
+    font-size: 1.35rem;
+  }
+  .pf-vcard-shadow {
+    width: min(240px, calc(100vw - 40px));
+  }
+  .pf-vcard-details-grid {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .pf-vcard-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+  }
+}

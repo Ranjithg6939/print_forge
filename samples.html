@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+  <link rel="alternate icon" href="favicon.svg" type="image/svg+xml">
+  <title>Printing Portfolio & Samples Archive – PrintForge</title>
+  <meta name="description" content="Browse PrintForge's filterable portfolio: hardcover books, packaging, brochures, calendars, magazines, and luxury foiled business cards.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body class="pf-grid-bg">
+
+
+  <!-- Sticky Navbar -->
+  <header class="pf-navbar-wrap">
+    <div class="container">
+      <nav class="pf-navbar">
+        <a href="index.html" class="pf-brand">
+          <div class="pf-brand-icon"><span>P</span></div>
+          <span>PRINT<span class="text-danger">FORGE</span></span>
+        </a>
+
+        <ul class="pf-nav-menu">
+          <button class="pf-mobile-close d-lg-none"><i class="bi bi-x-lg"></i></button>
+
+          <!-- Home Dropdown (Only Dropdown) -->
+          <li class="pf-nav-item pf-dropdown">
+            <a href="index.html" class="pf-nav-link">Home <i class="bi bi-chevron-down"></i></a>
+            <ul class="pf-dropdown-menu">
+              <li><a href="index.html" class="pf-dropdown-item">Commercial Offset Printing <i class="bi bi-arrow-right"></i></a></li>
+              <li><a href="home-2.html" class="pf-dropdown-item">Book Printing Offset <i class="bi bi-arrow-right"></i></a></li>
+            </ul>
+          </li>
+
+          <li class="pf-nav-item"><a href="about.html" class="pf-nav-link">About Us</a></li>
+          <li class="pf-nav-item"><a href="services.html" class="pf-nav-link">Services</a></li>
+          <li class="pf-nav-item"><a href="pricing.html" class="pf-nav-link">Pricing</a></li>
+
+          <!-- Dedicated Booking Navigation Item -->
+          <li class="pf-nav-item">
+            <a href="booking.html" class="pf-nav-link pf-nav-booking-link">Book Order</a>
+          </li>
+          <li class="pf-nav-item"><a href="blog.html" class="pf-nav-link">Blog</a></li>
+          <li class="pf-nav-item"><a href="contact.html" class="pf-nav-link">Contact</a></li>
+        </ul>
+
+        <div class="pf-nav-actions">
+          <button class="pf-action-icon-btn pf-theme-toggle"><i class="bi bi-moon-stars-fill"></i></button>
+          <button class="pf-rtl-toggle">RTL</button>
+
+          <a href="contact.html" class="pf-btn pf-btn-primary d-none d-sm-inline-flex">Get a Quote <i class="bi bi-arrow-up-right"></i></a>
+          <button class="pf-mobile-toggle"><i class="bi bi-list"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       SAMPLES HERO
+       =================================================================== -->
+  <section class="py-5" style="background: var(--pf-footer-bg); color: #fff; padding-top: 5.5rem !important; padding-bottom: 4rem !important;">
+    <div class="container text-center">
+      <div class="pf-badge pf-badge-dark border-light text-white mb-3">Master Crafts Archive</div>
+      <h1 class="display-4 fw-bold text-white mb-3 pf-title-underline text-center">Print Portfolio & Physical Samples</h1>
+      <p class="lead text-secondary max-w-700 mx-auto mt-3" style="color: #D8B8E8 !important;">
+        Explore a curated selection of books, rigid boxes, folded brochures, and luxury stationery produced for discerning global clients.
+      </p>
+    </div>
+  </section>
+
+  <!-- Flowing Organic Lavender Wave Divider (Hero to Gallery) -->
+  <div class="pf-wave-divider" style="background-color: var(--pf-footer-bg);">
+    <svg viewBox="0 0 1440 70" fill="none" preserveAspectRatio="none">
+      <path d="M0,25 C320,75 440,0 720,35 C1000,75 1140,5 1440,25 L1440,100 L0,100 Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+
+  <!-- ===================================================================
+       FILTERABLE PORTFOLIO SECTION
+       =================================================================== -->
+  <section class="py-5">
+    <div class="container py-4">
+
+      <!-- Category Filter Navigation -->
+      <div class="pf-filter-nav">
+        <button class="pf-filter-btn active" data-filter="all">All Projects</button>
+        <button class="pf-filter-btn" data-filter="books">Books</button>
+        <button class="pf-filter-btn" data-filter="brochures">Brochures</button>
+        <button class="pf-filter-btn" data-filter="calendars">Calendars</button>
+        <button class="pf-filter-btn" data-filter="magazines">Magazines</button>
+        <button class="pf-filter-btn" data-filter="packaging">Packaging</button>
+        <button class="pf-filter-btn" data-filter="business-cards">Business Cards</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="pf-gallery-grid">
+
+        <!-- Sample 1: Book -->
+        <div class="pf-gallery-item" data-category="books">
+          <img src="assets/images/services/Book Printing press.jpg" alt="Smyth-Sewn Hardcover Book">
+          <div class="pf-gallery-overlay">
+            <span class="pf-gallery-meta">Case-Bound Book & Gold Stamping</span>
+            <h4 class="pf-gallery-title">The Typography Encyclopedia</h4>
+            <div class="small text-light opacity-75">Client: Sterling Academic Press &bull; 10,000 units</div>
+          </div>
+        </div>
+
+        <!-- Sample 2: Packaging -->
+        <div class="pf-gallery-item" data-category="packaging">
+          <img src="assets/images/services/Packaging Printing press.jpg" alt="Luxury Packaging Boxes" style="object-position: center 30%;">
+          <div class="pf-gallery-overlay">
+            <span class="pf-gallery-meta">Two-Piece Rigid Gift Box</span>
+            <h4 class="pf-gallery-title">Botanica Fragrance Packaging</h4>
+            <div class="small text-light opacity-75">Client: Botanica Paris &bull; Soft-touch & UV</div>
+          </div>
+        </div>
+
+        <!-- Sample 3: Brochure -->
+        <div class="pf-gallery-item" data-category="brochures">
+          <img src="assets/images/services/Brochure Printing press.jpg" alt="Gatefold Corporate Brochure">
+          <div class="pf-gallery-overlay">
+            <span class="pf-gallery-meta">8-Panel Gatefold Brochure</span>
+            <h4 class="pf-gallery-title">Aero Dynamics Investor Report</h4>
+            <div class="small text-light opacity-75">Client: AeroCorp Global &bull; 25,000 units</div>
+          </div>
+        </div>
+
+        <!-- Sample 4: Calendar -->
+        <div class="pf-gallery-item" data-category="calendars">
+          <img src="assets/images/services/Calendar Printing press.jpg" alt="Desk & Wall Calendar" style="object-position: center 25%;">
+          <div class="pf-gallery-overlay">
+            <span class="pf-gallery-meta">Twin-Wire Executive Calendar</span>
+            <h4 class="pf-gallery-title">National Geographic 2026 Calendar</h4>
+            <div class="small text-light opacity-75">Heavy Silk 250 GSM & Wire-O Hanger</div>
+          </div>
+        </div>
+
+        <!-- Sample 5: Magazine -->
+        <div class="pf-gallery-item" data-category="magazines">
+          <img src="assets/images/services/Magazine Printing.jpg" alt="Quarterly Design Journal">
+          <div class="pf-gallery-overlay">
+            <span class="pf-gallery-meta">Quarterly Periodical</span>
+            <h4 class="pf-gallery-title">Minimalist Design Review</h4>
+            <div class="small text-light opacity-75">Square-Back PUR Glue & Matte Varnish</div>
+          </div>
+        </div>
+
+        <!-- Sample 6: Business Cards -->
+        <div class="pf-gallery-item" data-category="business-cards">
+          <img src="assets/images/services/Business Card Printing.jpg" alt="Cotton Duplex Business Cards">
+          <div class="pf-gallery-overlay">
+            <span class="pf-gallery-meta">600 GSM Duplex Cotton</span>
+            <h4 class="pf-gallery-title">Architectural Partners Identity</h4>
+            <div class="small text-light opacity-75">Debossed Red Foil & Black Edge Gilding</div>
+          </div>
+        </div>
+
+        <!-- Sample 7: Books -->
+        <div class="pf-gallery-item" data-category="books">
+          <img src="assets/images/hero-gallery/card-02-book-binding.jpg" alt="Hardcover Art Monograph">
+          <div class="pf-gallery-overlay">
+            <span class="pf-gallery-meta">Clothbound with Clamshell Box</span>
+            <h4 class="pf-gallery-title">Modernist Sculpture Monograph</h4>
+            <div class="small text-light opacity-75">Numbered Limited Edition of 1,200</div>
+          </div>
+        </div>
+
+        <!-- Sample 8: Packaging -->
+        <div class="pf-gallery-item" data-category="packaging">
+          <img src="assets/images/services/Foil Stamping & Finishes.jpg" alt="Foil Stamped Luxury Carton">
+          <div class="pf-gallery-overlay">
+            <span class="pf-gallery-meta">Folding Cosmetic Carton</span>
+            <h4 class="pf-gallery-title">Aura Skincare Packaging Line</h4>
+            <div class="small text-light opacity-75">FSC Certified SBS Board & Micro-Emboss</div>
+          </div>
+        </div>
+
+        <!-- Sample 9: Brochures -->
+        <div class="pf-gallery-item" data-category="brochures">
+          <img src="assets/images/services/Catalogue Printing.jpg" alt="Saddle-Stitched Product Booklet" style="object-position: center 30%;">
+          <div class="pf-gallery-overlay">
+            <span class="pf-gallery-meta">Saddle-Stitched Booklet</span>
+            <h4 class="pf-gallery-title">Helios Automotive Lookbook</h4>
+            <div class="small text-light opacity-75">Pantone Silver Metallic & High Gloss</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sample Pack Request Banner -->
+      <div class="mt-5 p-4 p-md-5 rounded-4 bg-white border shadow-sm text-center" style="background-color: var(--pf-surface) !important;">
+        <div class="pf-badge">Free Material Kit</div>
+        <h3 class="fw-bold mb-2">Want to Feel Our Paper Stocks in Your Hands?</h3>
+        <p class="text-secondary max-w-700 mx-auto mb-4">
+          Order our comprehensive PrintForge Swatch Box including 30+ paper samples, foil stamping chips, varnish comparison guides, and binding mockups.
+        </p>
+        <a href="contact.html" class="pf-btn pf-btn-primary pf-btn-lg">Request Physical Swatch Box <i class="bi bi-box-seam ms-2"></i></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Flowing Organic Lavender Wave Divider (Body to Footer) -->
+  <div class="pf-wave-divider" style="background-color: var(--pf-warm-paper);">
+    <svg viewBox="0 0 1440 70" fill="none" preserveAspectRatio="none">
+      <path d="M0,25 C320,75 440,0 720,35 C1000,75 1140,5 1440,25 L1440,100 L0,100 Z" fill="#15091E"></path>
+    </svg>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="pf-search-modal" id="pf-search-modal">
+    <div class="pf-search-inner">
+      <button class="pf-search-close">&times;</button>
+      <form action="services.html" method="get">
+        <input type="text" class="pf-search-input" placeholder="Search samples by product or paper..." autofocus>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       Global Footer
+       =================================================================== -->
+  <footer class="pf-footer">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Col 1: Brand Info -->
+        <div class="col-lg-4">
+          <a href="index.html" class="pf-brand mb-3 d-inline-flex align-items-center">
+            <div class="pf-brand-icon">
+              <span>P</span>
+            </div>
+            <span>PRINT<span class="text-danger">FORGE</span></span>
+          </a>
+          <p class="small text-secondary">
+            PrintForge is an elite industrial offset printing press and commercial book manufacturing facility. We engineer tangible print perfection through Heidelberg automated sheetfed technology.
+          </p>
+          <div class="pf-cmyk-strip my-3">
+            <span class="pf-cmyk-c"></span>
+            <span class="pf-cmyk-m"></span>
+            <span class="pf-cmyk-y"></span>
+            <span class="pf-cmyk-k"></span>
+          </div>
+          <div class="pf-footer-social d-flex gap-2 mt-3">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="pf-social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="pf-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="pf-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="pf-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-sm-6 col-lg-2">
+          <h5>Navigation</h5>
+          <ul class="pf-footer-links">
+            <li><a href="index.html">Commercial Offset Printing</a></li>
+            <li><a href="home-2.html">Book Printing Offset</a></li>
+            <li><a href="about.html">About Plant</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="booking.html">Book Order</a></li>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="blog.html">Press Insights</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="col-sm-6 col-lg-3">
+          <h5>Core Capabilities</h5>
+          <ul class="pf-footer-links">
+            <li><a href="service-details.html">Offset Commercial Printing</a></li>
+            <li><a href="service-details.html">Hardcover & Softcover Books</a></li>
+            <li><a href="service-details.html">Folded Brochures & Menus</a></li>
+            <li><a href="service-details.html">Luxury Rigid Packaging</a></li>
+            <li><a href="service-details.html">Corporate Identity & Cards</a></li>
+            <li><a href="service-details.html">Foil Stamping & Embossing</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Contact -->
+        <div class="col-lg-3">
+          <h5>Press Updates</h5>
+          <p class="small text-secondary">Subscribe for technical paper guides, Pantone release notes, and factory insights.</p>
+          <form class="pf-newsletter-form mb-3">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-sm" placeholder="Your work email..." required>
+              <button class="btn btn-danger btn-sm" type="submit">Join</button>
+            </div>
+          </form>
+          <div class="small text-secondary mt-2">
+            <div><i class="bi bi-geo-alt text-danger me-1"></i> 742 Industrial Pkwy, NY</div>
+            <div><i class="bi bi-envelope text-danger me-1"></i> press@printforge-demo.com</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="pf-footer-bottom text-center">
+        <div class="text-secondary small">
+          &copy; 2026 PrintForge Press & Publishing Ltd. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

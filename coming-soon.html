@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+  <link rel="alternate icon" href="favicon.svg" type="image/svg+xml">
+  <title>Coming Soon – PrintForge Plant Extension & Web Store</title>
+  <meta name="description" content="PrintForge is expanding. Our new automated digital web ordering portal and high-speed B1 perfecting press line are launching soon.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.8">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=2.8">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <style>
+    .pf-countdown-box {
+      background: var(--pf-surface);
+      border: 1px solid var(--pf-border-color);
+      border-radius: var(--pf-radius-md);
+      padding: 1.5rem 1rem;
+      min-width: 100px;
+      text-align: center;
+      box-shadow: var(--pf-shadow-sm);
+    }
+    .pf-countdown-num {
+      font-family: var(--pf-font-heading);
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--pf-primary-deep);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pf-countdown-lbl {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--pf-steel-grey);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="pf-dots-bg d-flex flex-column min-vh-100 justify-content-between">
+
+  <!-- Top bar -->
+  <header class="py-4">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="index.html" class="pf-brand">
+        <div class="pf-brand-icon"><span>P</span></div>
+        <span>PRINT<span class="text-danger">FORGE</span></span>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button class="pf-theme-toggle pf-action-icon-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        <button class="pf-rtl-toggle">RTL</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-auto py-5 text-center">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="pf-badge pf-badge-dark mb-3">
+          <span class="pf-reg-mark me-2"></span> EXPANSION IN PROGRESS &bull; COMING Q1 2027
+        </div>
+
+        <h1 class="display-4 fw-bold mb-3 pf-title-underline text-center">
+          Next-Generation Automated Press Portal Is Coming Soon
+        </h1>
+
+        <p class="lead text-secondary max-w-700 mx-auto mt-3 mb-5">
+          We are launching our automated web-to-print quotation engine, instant 3D PDF preflight proofing simulator, and our new Heidelberg XL 106 10-Color UV press line.
+        </p>
+
+        <!-- Interactive Countdown Timer -->
+        <div class="d-flex justify-content-center gap-3 mb-5 flex-wrap">
+          <div class="pf-countdown-box">
+            <div class="pf-countdown-num" id="cd-days">48</div>
+            <div class="pf-countdown-lbl">Days</div>
+          </div>
+          <div class="pf-countdown-box">
+            <div class="pf-countdown-num" id="cd-hours">16</div>
+            <div class="pf-countdown-lbl">Hours</div>
+          </div>
+          <div class="pf-countdown-box">
+            <div class="pf-countdown-num" id="cd-mins">34</div>
+            <div class="pf-countdown-lbl">Minutes</div>
+          </div>
+          <div class="pf-countdown-box">
+            <div class="pf-countdown-num" id="cd-secs">20</div>
+            <div class="pf-countdown-lbl">Seconds</div>
+          </div>
+        </div>
+
+        <!-- Subscription Form -->
+        <div class="max-w-600 mx-auto">
+          <h4 class="h6 fw-bold mb-3 text-uppercase" style="letter-spacing: 0.1em;">Be First to Receive Launch Access & Sample Swatches</h4>
+          <form class="pf-newsletter-form">
+            <div class="input-group input-group-lg">
+              <input type="email" class="pf-input border-end-0" placeholder="Enter your publisher or agency email..." required>
+              <button class="pf-btn pf-btn-primary" type="submit">Notify Me <i class="bi bi-bell-fill ms-1"></i></button>
+            </div>
+          </form>
+          <div class="small text-secondary mt-2">Zero spam. Only technical announcements and launch invitations.</div>
+        </div>
+
+        <div class="mt-5">
+          <a href="index.html" class="pf-btn pf-btn-outline"><i class="bi bi-arrow-left me-2"></i> Visit Current Factory Site</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4 border-top text-center small text-secondary">
+    <div class="container text-center">
+      <div>&copy; 2026 PrintForge Press & Publishing Ltd. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script>
+    // Simple dynamic countdown ticking
+    let totalSeconds = 48 * 86400 + 16 * 3600 + 34 * 60 + 20;
+    setInterval(() => {
+      totalSeconds--;
+      if (totalSeconds < 0) totalSeconds = 0;
+      const d = Math.floor(totalSeconds / 86400);
+      const h = Math.floor((totalSeconds % 86400) / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = totalSeconds % 60;
+      document.getElementById('cd-days').innerText = d;
+      document.getElementById('cd-hours').innerText = h < 10 ? '0' + h : h;
+      document.getElementById('cd-mins').innerText = m < 10 ? '0' + m : m;
+      document.getElementById('cd-secs').innerText = s < 10 ? '0' + s : s;
+    }, 1000);
+  </script>
+</body>
+</html>
