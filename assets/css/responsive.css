@@ -25,10 +25,16 @@
 }
 
 /* ===================================================================
-   DESKTOP NAVIGATION (992px to 1024px & pf-force-desktop-nav)
-   When menu items fit properly without overlapping.
+   DESKTOP NAVIGATION (769px to 1024px)
+   Tablet Landscape & Medium Desktop Viewport Symmetrical Alignment
    =================================================================== */
-@media (min-width: 992px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
+  .pf-navbar-wrap .container {
+    max-width: 100% !important;
+    padding-left: clamp(12px, 2.5vw, 24px) !important;
+    padding-right: clamp(12px, 2.5vw, 24px) !important;
+  }
+
   .pf-mobile-toggle {
     display: none !important;
   }
@@ -42,18 +48,40 @@
   }
 
   .pf-navbar {
-    padding: 0.75rem 0;
+    min-height: 64px !important;
+    padding: 0.5rem 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: clamp(6px, 1.2vw, 16px) !important;
   }
 
   .pf-brand {
-    font-size: 1.25rem !important;
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem) !important;
     gap: 8px !important;
     flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
   }
 
   .pf-brand-icon {
     width: 34px !important;
     height: 34px !important;
+    font-size: 1.05rem !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+  }
+
+  .pf-brand span {
+    display: inline-flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
   }
 
   .pf-nav-menu {
@@ -70,7 +98,7 @@
     padding: 0 !important;
     box-shadow: none !important;
     border: none !important;
-    gap: 0.85rem !important;
+    gap: clamp(2px, 0.6vw, 10px) !important;
     overflow-y: visible !important;
     z-index: auto !important;
     margin: 0 !important;
@@ -79,37 +107,67 @@
   .pf-nav-item {
     border: none !important;
     width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .pf-nav-link {
-    padding: 6px 9px !important;
-    font-size: 0.84rem !important;
+    padding: 6px clamp(4px, 0.7vw, 10px) !important;
+    font-size: clamp(0.74rem, 0.95vw, 0.85rem) !important;
     font-weight: 700 !important;
     white-space: nowrap !important;
     width: auto !important;
     border-radius: 6px !important;
+    line-height: 1.2 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 3px !important;
   }
 
   .pf-nav-actions {
-    gap: 8px !important;
+    gap: clamp(4px, 0.8vw, 8px) !important;
     flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-left: auto !important;
   }
 
   .pf-nav-actions .pf-btn {
     display: inline-flex !important;
-    padding: 7px 14px !important;
-    font-size: 0.8125rem !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 34px !important;
+    padding: 0 clamp(8px, 1.2vw, 14px) !important;
+    font-size: clamp(0.72rem, 0.9vw, 0.8rem) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
 
   .pf-action-icon-btn {
-    width: 36px !important;
-    height: 36px !important;
-    font-size: 1rem !important;
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 0.9rem !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
   }
 
   .pf-rtl-toggle {
-    font-size: 0.7rem !important;
-    padding: 5px 9px !important;
+    height: 34px !important;
+    min-width: 38px !important;
+    padding: 0 8px !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
   }
 
   .pf-dropdown-menu {
@@ -149,58 +207,86 @@
 }
 
 /* ===================================================================
-   HAMBURGER MENU (320px to 991.98px)
-   - Mobile: 320px–767px (Always hamburger)
-   - Tablet: 768px–991px (Retains hamburger because 7 desktop links
-     would otherwise overlap/cut off RTL & action buttons).
+   HAMBURGER MENU (320px to 768.98px)
+   - Mobile: 320px–768px (Always hamburger)
+   - Desktop & Tablet: 769px–1024px+ (Full desktop navbar)
    =================================================================== */
-@media (max-width: 991.98px) {
+@media (max-width: 768.98px) {
   body {
-    padding-top: 54px !important;
+    padding-top: 56px !important;
   }
 
   .pf-navbar {
-    padding: 0.55rem 0 !important;
+    min-height: 56px !important;
+    padding: 0.5rem 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     flex-wrap: nowrap !important;
-    gap: 6px !important;
+    gap: 8px !important;
   }
 
   .pf-brand {
-    font-size: clamp(1.05rem, 3.8vw, 1.25rem) !important;
+    font-size: clamp(1.1rem, 3.8vw, 1.25rem) !important;
     gap: 8px !important;
-    flex-shrink: 1 !important;
+    flex-shrink: 0 !important;
     min-width: 0 !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
   }
 
   .pf-brand-icon {
-    width: 32px !important;
-    height: 32px !important;
+    width: 34px !important;
+    height: 34px !important;
     font-size: 1.05rem !important;
     flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+  }
+
+  .pf-brand span {
+    display: inline-flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
   }
 
   .pf-nav-actions {
     display: flex !important;
     align-items: center !important;
-    gap: 5px !important;
+    gap: 8px !important;
     flex-shrink: 0 !important;
     margin-left: auto !important;
   }
 
   .pf-action-icon-btn {
-    width: 34px !important;
-    height: 34px !important;
+    width: 36px !important;
+    height: 36px !important;
     font-size: 0.95rem !important;
     flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    padding: 0 !important;
   }
 
   .pf-rtl-toggle {
-    padding: 4px 8px !important;
-    font-size: 0.68rem !important;
+    height: 36px !important;
+    min-width: 42px !important;
+    padding: 0 10px !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    border-radius: var(--pf-radius-pill) !important;
     flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
   }
 
   .pf-nav-actions .pf-btn {
@@ -209,18 +295,28 @@
 
   .pf-mobile-toggle {
     display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    padding: 0 !important;
     width: 36px !important;
     height: 36px !important;
-    border-radius: 8px;
-    font-size: 1.2rem !important;
+    border-radius: 8px !important;
+    font-size: 1.25rem !important;
     flex-shrink: 0 !important;
-    border: 1px solid var(--pf-border-color);
-    background: transparent;
-    color: var(--pf-ink);
-    cursor: pointer;
-    margin-left: 0;
+    border: 1px solid var(--pf-border-color) !important;
+    background: transparent !important;
+    color: var(--pf-ink) !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+  }
+
+  .pf-mobile-toggle i,
+  .pf-action-icon-btn i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
   }
 
   .pf-nav-menu {
@@ -234,7 +330,7 @@
     background: #FFFFFF !important;
     flex-direction: column !important;
     align-items: stretch !important;
-    padding: 75px 20px 30px !important;
+    padding: 72px 18px 28px !important;
     box-shadow: -8px 0 32px rgba(117, 67, 154, 0.22) !important;
     gap: 0 !important;
     transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -245,6 +341,19 @@
 
   .pf-nav-menu.open {
     right: 0 !important;
+  }
+
+  [dir="rtl"] .pf-nav-menu {
+    right: auto !important;
+    left: -100% !important;
+    border-left: none !important;
+    border-right: 1px solid var(--pf-border-color) !important;
+    box-shadow: 8px 0 32px rgba(117, 67, 154, 0.22) !important;
+  }
+
+  [dir="rtl"] .pf-nav-menu.open {
+    left: 0 !important;
+    right: auto !important;
   }
 
   .pf-nav-item {
@@ -327,15 +436,27 @@
   /* Close button inside mobile menu */
   .pf-mobile-close {
     position: absolute !important;
-    top: 18px !important;
-    right: 18px !important;
-    background: transparent !important;
-    border: none !important;
-    font-size: 1.5rem !important;
+    top: 16px !important;
+    right: 16px !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 8px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid var(--pf-border-color) !important;
+    background: var(--pf-bg-alt) !important;
+    font-size: 1rem !important;
     color: var(--pf-ink) !important;
     cursor: pointer !important;
     z-index: 1070 !important;
-    padding: 4px 8px !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+  }
+
+  [dir="rtl"] .pf-mobile-close {
+    right: auto !important;
+    left: 16px !important;
   }
 
   /* Overlay */
@@ -448,10 +569,10 @@
   }
 
   .pf-stat-icon {
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    font-size: 1.6rem !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    font-size: 1.85rem !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -460,14 +581,14 @@
   }
 
   .pf-stat-num {
-    font-size: clamp(1.45rem, 4.5vw, 1.95rem) !important;
+    font-size: clamp(1.75rem, 5vw, 2.35rem) !important;
     font-weight: 800 !important;
     line-height: 1.1 !important;
     margin-bottom: 2px !important;
   }
 
   .pf-stat-label {
-    font-size: clamp(0.72rem, 2.2vw, 0.84rem) !important;
+    font-size: clamp(0.92rem, 2.6vw, 1.05rem) !important;
     font-weight: 700 !important;
     line-height: 1.35 !important;
   }
@@ -582,6 +703,21 @@
   .pf-dashboard-main {
     margin-left: 0 !important;
   }
+
+  /* Center Hero & Section CTA Button Groups on Tablet / Mobile (< 992px) */
+  .pf-hero-animate-btns,
+  .pf-service-hero-btns,
+  .pf-intro-btns,
+  .pf-hero-actions,
+  .pf-hero-btns {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 /* Extra Small Screens (<= 575.98px: Small Mobile) */
@@ -596,19 +732,63 @@
   }
 
   .pf-hero-actions,
-  .pf-hero-btns {
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
+  .pf-hero-btns,
+  .pf-hero-animate-btns,
+  .pf-service-hero-btns,
+  .pf-intro-btns {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .pf-hero-actions .btn,
   .pf-hero-btns .btn,
   .pf-hero-actions .pf-btn,
-  .pf-hero-btns .pf-btn {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
+  .pf-hero-btns .pf-btn,
+  .pf-hero-animate-btns .pf-btn,
+  .pf-service-hero-btns .pf-btn,
+  .pf-intro-btns .pf-btn {
+    width: 100% !important;
+    max-width: 320px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Universal badge mobile polish & center alignment */
+  .pf-badge {
+    max-width: 100% !important;
+    font-size: 0.78rem !important;
+    padding: 5px 14px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    white-space: normal !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Contact Form Submit Button Mobile Precision */
+  .pf-contact-submit-btn {
+    padding: 12px 16px !important;
+    font-size: clamp(0.85rem, 3.2vw, 0.94rem) !important;
+    min-height: 50px !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    white-space: normal !important;
+  }
+
+  .pf-contact-submit-btn .pf-btn-text {
+    display: inline-block !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
   }
 
   /* Full-width Modal & CTA Action Buttons on Small Mobile */
@@ -765,43 +945,92 @@
   }
 }
 
-/* Ultra Small Screens (<= 380px: 320px - 375px) */
+/* Ultra Small Screens (<= 380px: 320px - 375px, 328px) */
 @media (max-width: 380px) {
   .pf-navbar {
-    padding: 0.5rem 0;
-    gap: 4px;
+    min-height: 50px !important;
+    padding: 0.4rem 0 !important;
+    gap: 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
   }
 
   .pf-brand {
-    font-size: 1.125rem;
-    gap: 6px;
+    font-size: 1.05rem !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
   }
 
   .pf-brand-icon {
-    width: 30px;
-    height: 30px;
-    font-size: 1rem;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 0.95rem !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
   }
 
   .pf-nav-actions {
-    gap: 4px;
+    gap: 5px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
   .pf-action-icon-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 0.85rem;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.85rem !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
   }
 
   .pf-rtl-toggle {
-    padding: 3px 6px;
-    font-size: 0.65rem;
+    height: 32px !important;
+    min-width: 36px !important;
+    padding: 0 7px !important;
+    font-size: 0.65rem !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
   }
 
   .pf-mobile-toggle {
-    width: 34px;
-    height: 34px;
-    font-size: 1.1rem;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1.15rem !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .pf-mobile-close {
+    top: 12px !important;
+    right: 12px !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.9rem !important;
+  }
+
+  [dir="rtl"] .pf-mobile-close {
+    right: auto !important;
+    left: 12px !important;
   }
 
   .pf-hero-headline {
@@ -842,11 +1071,11 @@
   }
 
   .pf-stat-num {
-    font-size: 1.4rem !important;
+    font-size: 1.65rem !important;
   }
 
   .pf-stat-label {
-    font-size: 0.68rem !important;
+    font-size: 0.85rem !important;
     line-height: 1.25 !important;
   }
 

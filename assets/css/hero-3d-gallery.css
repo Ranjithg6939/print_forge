@@ -61,8 +61,60 @@
   }
 }
 
+@keyframes pfBadgeGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 4px 16px rgba(121, 34, 165, 0.25);
+    border-color: rgba(226, 212, 238, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(199, 150, 221, 0.45), 0 6px 24px rgba(121, 34, 165, 0.55), 0 0 12px rgba(199, 150, 221, 0.3);
+    border-color: rgba(199, 150, 221, 0.6);
+  }
+}
+
+@keyframes pfBadgeShimmer {
+  0%, 25% {
+    left: -120%;
+  }
+  65%, 100% {
+    left: 220%;
+  }
+}
+
 .pf-hero-animate-badge {
-  animation: pfFadeSlideDown 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(121, 34, 165, 0.22) 100%) !important;
+  border: 1px solid rgba(226, 212, 238, 0.35) !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  padding: 8px 20px;
+  animation: pfFadeSlideDown 0.75s cubic-bezier(0.16, 1, 0.3, 1) both,
+             pfBadgeGlow 3.5s ease-in-out 0.8s infinite alternate;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.pf-hero-animate-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.35) 50%, transparent 100%);
+  transform: skewX(-25deg);
+  animation: pfBadgeShimmer 4s cubic-bezier(0.4, 0, 0.2, 1) 1.2s infinite;
+  pointer-events: none;
+}
+
+.pf-hero-animate-badge:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 8px 28px rgba(121, 34, 165, 0.65), 0 0 16px rgba(199, 150, 221, 0.4) !important;
 }
 
 .pf-hero-animate-title {

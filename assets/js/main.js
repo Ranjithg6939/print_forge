@@ -18,6 +18,23 @@
     initPricingTabs();
     initBlogPagination();
     initBlogDetailsTopic();
+    initPillarCards();
+  }
+
+  // Interactive Core Pillar Cards (About Page)
+  function initPillarCards() {
+    const cards = document.querySelectorAll('.pf-pillar-card');
+    if (!cards.length) return;
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        cards.forEach(c => c.classList.remove('pf-pillar-active'));
+        card.classList.add('pf-pillar-active');
+      });
+      card.addEventListener('click', () => {
+        cards.forEach(c => c.classList.remove('pf-pillar-active'));
+        card.classList.add('pf-pillar-active');
+      });
+    });
   }
 
   if (document.readyState === 'loading') {
@@ -92,24 +109,12 @@
     if (!navbarWrap) return;
 
     const w = window.innerWidth;
-    if (w < 768) {
+    if (w <= 768) {
       navbarWrap.classList.remove('pf-force-desktop-nav');
       navbarWrap.classList.add('pf-force-mobile-nav');
-    } else if (w >= 1025) {
+    } else {
       navbarWrap.classList.remove('pf-force-mobile-nav');
       navbarWrap.classList.add('pf-force-desktop-nav');
-    } else {
-      // Tablet range (768px–1024px):
-      // If width >= 992px, 7 menu items + actions fit cleanly without overlapping.
-      // Below 992px (e.g. 768px, 820px), all 7 items exceed the 720px container,
-      // so retain hamburger menu to avoid cutting off action buttons.
-      if (w >= 992) {
-        navbarWrap.classList.remove('pf-force-mobile-nav');
-        navbarWrap.classList.add('pf-force-desktop-nav');
-      } else {
-        navbarWrap.classList.remove('pf-force-desktop-nav');
-        navbarWrap.classList.add('pf-force-mobile-nav');
-      }
     }
   }
 
@@ -620,24 +625,9 @@
       }
 
       if (resetBtn) {
-        resetBtn.addEventListener('click', function () {
-          if (formView) formView.style.display = 'block';
-          if (confirmationView) confirmationView.style.display = 'none';
-          if (bookingForm) {
-            bookingForm.reset();
-            bookingForm.querySelectorAll('input, select, textarea').forEach(el => {
-              el.classList.remove('is-valid', 'is-invalid', 'pf-is-valid', 'pf-is-invalid');
-              el.removeAttribute('aria-invalid');
-              delete el.dataset.touched;
-              const parent = el.closest('.input-group') ? el.closest('.input-group').parentElement : el.parentElement;
-              parent?.querySelectorAll('.pf-error-feedback')?.forEach(fb => fb.remove());
-            });
-            const submitBtn = bookingForm.querySelector('button[type="submit"]');
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.innerHTML = 'Confirm Booking & Reserve Press Slot <i class="bi bi-arrow-right ms-2"></i>';
-            }
-          }
+        resetBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.location.href = 'booking.html';
         });
       }
     }
@@ -1738,12 +1728,12 @@
     if (article.toc && article.toc.length > 0) {
       if (tocList) {
         tocList.innerHTML = article.toc.map((item, idx) => 
-          `<li><a href="#section-${idx + 1}" class="text-decoration-none">${item}</a></li>`
+          `<li><a href="#section-${idx + 1}" class="pf-toc-link text-decoration-none">${item}</a></li>`
         ).join('');
       }
       if (sidebarTocList) {
         sidebarTocList.innerHTML = article.toc.map((item, idx) => 
-          `<li class="mb-2"><a href="#section-${idx + 1}" class="text-secondary"><i class="bi bi-chevron-right me-1"></i> ${item}</a></li>`
+          `<li class="mb-2"><a href="#section-${idx + 1}" class="pf-toc-link text-decoration-none"><i class="bi bi-chevron-right pf-toc-chevron me-2"></i> ${item}</a></li>`
         ).join('');
       }
     }
@@ -1789,7 +1779,7 @@
       if (related.length >= 2) {
         relatedGrid.innerHTML = related.map(rel => `
           <div class="col-md-6">
-            <div class="pf-blog-card h-100">
+            <div class="pf-blog-card pf-related-blog-card h-100">
               <div class="pf-blog-thumb" style="height: 190px;">
                 <a href="${rel.link}">
                   <img src="${rel.img}" alt="${rel.alt || rel.title}" loading="lazy">
@@ -1800,8 +1790,8 @@
                   <span><i class="bi bi-calendar3 me-1"></i> ${rel.date}</span>
                   <span><i class="bi bi-tag me-1"></i> ${rel.tag}</span>
                 </div>
-                <h5 class="h6 fw-bold mb-2"><a href="${rel.link}" class="text-reset text-decoration-none">${rel.title}</a></h5>
-                <p class="small text-secondary mb-3">${rel.desc}</p>
+                <h5 class="pf-related-blog-title"><a href="${rel.link}" class="text-reset text-decoration-none">${rel.title}</a></h5>
+                <p class="pf-related-blog-desc">${rel.desc}</p>
                 <a href="${rel.link}" class="pf-link-arrow mt-auto">Read Guide <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>

@@ -274,7 +274,7 @@
   box-shadow: 0 6px 24px rgba(168, 85, 247, 0.55) !important;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 768.98px) {
   [data-theme="dark"] .pf-nav-menu {
     background-color: #0E0516 !important;
     border-left: 1px solid #28153A !important;
@@ -283,7 +283,7 @@
     border-bottom: 1px solid #28153A !important;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 769px) {
   [data-theme="dark"] .pf-nav-menu {
     background-color: transparent !important;
     border: none !important;
@@ -491,7 +491,8 @@
 }
 [data-theme="dark"] [style*="background-color: #FFFFFF"] .accordion-body {
   background-color: #FAF5FD !important;
-  color: #4A3A58 !important;
+  color: #2D1A3E !important;
+  font-weight: 600 !important;
 }
 
 /* Comparison Card inside Section 7 */
@@ -553,6 +554,59 @@
   color: #7A658E !important;
 }
 
+[data-theme="dark"] .pf-testimonial-text {
+  color: #EDE4F5 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="dark"] .pf-client-info span {
+  color: #DDD2E6 !important;
+  font-weight: 700 !important;
+}
+
+/* Company Introduction Card */
+[data-theme="dark"] .pf-intro-section-card {
+  background-color: #1E0E2E !important;
+  border-color: rgba(226, 212, 238, 0.18) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45) !important;
+}
+[data-theme="dark"] .pf-intro-section-card h2 {
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .pf-intro-section-card p {
+  color: #DDD2E6 !important;
+}
+[data-theme="dark"] .pf-intro-section-card span.fw-bold {
+  color: #EDE4F5 !important;
+}
+
+/* Commercial Paper & Coating Library Card */
+[data-theme="dark"] .pf-paper-section-card {
+  background-color: #1E0E2E !important;
+  border-color: rgba(226, 212, 238, 0.18) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45) !important;
+}
+[data-theme="dark"] .pf-paper-section-card h2 {
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .pf-paper-section-card p {
+  color: #DDD2E6 !important;
+}
+[data-theme="dark"] .pf-paper-section-card span.fw-bold {
+  color: #EDE4F5 !important;
+}
+[data-theme="dark"] .pf-paper-sample-badge {
+  background: rgba(30, 14, 46, 0.92) !important;
+  border-color: rgba(226, 212, 238, 0.22) !important;
+  color: #EDE4F5 !important;
+}
+[data-theme="dark"] .pf-paper-sample-badge span {
+  color: #EDE4F5 !important;
+}
+[data-theme="dark"] .pf-paper-sample-badge span:first-child {
+  color: #D495F5 !important;
+}
+
 /* Industrial Press Workflow Container inside Dark Mode */
 [data-theme="dark"] .pf-workflow-card {
   background-color: #FFFFFF !important;
@@ -606,6 +660,46 @@
 [data-theme="dark"] .pf-subtypes-box {
   background-color: #150821 !important;
   border-color: #2E1642 !important;
+}
+
+[data-theme="dark"] .pf-blog-body > p,
+[data-theme="dark"] .pf-blog-card-desc,
+[data-theme="dark"] .pf-related-blog-desc,
+[data-theme="dark"] .pf-blog-card p,
+[data-theme="dark"] .pf-contact-card-text,
+[data-theme="dark"] .pf-quote-form-intro,
+[data-theme="dark"] .pf-step-hint,
+[data-theme="dark"] .pf-checklist-intro {
+  color: #EDE4F5 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="dark"] .pf-article-header-meta i,
+[data-theme="dark"] .pf-article-header-meta .text-danger,
+[data-theme="dark"] .pf-article-meta-icon {
+  color: #E8B9FF !important;
+  filter: drop-shadow(0 0 8px rgba(232, 185, 255, 0.6));
+}
+[data-theme="dark"] .pf-article-meta-bullet {
+  color: rgba(232, 185, 255, 0.5) !important;
+}
+
+/* Table of Contents in Dark Mode */
+[data-theme="dark"] .pf-toc-link,
+[data-theme="dark"] #pf-sidebar-toc-list a,
+[data-theme="dark"] #pf-article-toc-list a {
+  color: #EDE4F5 !important;
+  font-weight: 700 !important;
+}
+[data-theme="dark"] .pf-toc-link:hover,
+[data-theme="dark"] #pf-sidebar-toc-list a:hover,
+[data-theme="dark"] #pf-article-toc-list a:hover {
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .pf-toc-chevron,
+[data-theme="dark"] #pf-sidebar-toc-list i,
+[data-theme="dark"] #pf-article-toc-list i {
+  color: #CE9FE4 !important;
 }
 
 [data-theme="dark"] .pf-pagination,
@@ -687,6 +781,18 @@
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 20px rgba(206, 159, 228, 0.25) !important;
 }
 
+[data-theme="dark"] .pf-service-badge {
+  background: rgba(14, 5, 22, 0.9) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .pf-service-card:hover .pf-service-badge {
+  background: linear-gradient(135deg, #9B38D1 0%, #681991 100%) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
 [data-theme="dark"] .pf-card:hover .pf-stat-icon i,
 [data-theme="dark"] .pf-feature-box:hover .pf-box-icon,
 [data-theme="dark"] .pf-stat-item:hover .pf-stat-icon i {
@@ -736,7 +842,19 @@
   filter: none !important;
 }
 
-/* Machinery List in Dark Mode */
+/* Machinery Container & List in Dark Mode */
+[data-theme="dark"] .pf-machinery-container {
+  background-color: #180A28 !important;
+  border-color: #381A50 !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
+}
+[data-theme="dark"] .pf-machinery-container p {
+  color: #DDD2E6 !important;
+}
+[data-theme="dark"] .pf-machinery-container h2 {
+  color: #FFFFFF !important;
+}
+
 [data-theme="dark"] .pf-machinery-list {
   background-color: #140720 !important;
   border-color: #2D143F !important;
@@ -787,7 +905,46 @@
   opacity: 0.85 !important;
 }
 
+/* Bright & Vibrant "Book Another Order" Button in Dark Mode */
+[data-theme="dark"] .pf-book-another-btn,
+[data-theme="dark"] #pf-booking-reset-btn {
+  background: linear-gradient(135deg, #B53FF0 0%, #851BB6 100%) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 8px 26px rgba(181, 63, 240, 0.55), 0 0 14px rgba(206, 159, 228, 0.35) !important;
+}
+[data-theme="dark"] .pf-book-another-btn:hover,
+[data-theme="dark"] #pf-booking-reset-btn:hover {
+  background: linear-gradient(135deg, #CA5CF8 0%, #9C27D5 100%) !important;
+  box-shadow: 0 12px 34px rgba(181, 63, 240, 0.7), 0 0 20px rgba(233, 213, 255, 0.8) !important;
+  border-color: #FFFFFF !important;
+}
+
 /* Process Step Content & Typography in Dark Mode */
+[data-theme="dark"] .pf-step-badge-node {
+  border-color: #12051E !important;
+  box-shadow: 0 0 0 4px rgba(206, 159, 228, 0.2), 0 6px 18px rgba(0, 0, 0, 0.5) !important;
+}
+[data-theme="dark"] .pf-process-step-row:hover .pf-step-badge-node {
+  border-color: #E2D4EE !important;
+  box-shadow: 0 0 0 5px rgba(206, 159, 228, 0.35), 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+}
+[data-theme="dark"] .pf-phase-badge {
+  background: linear-gradient(135deg, #9327C2 0%, #6A149B 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(147, 39, 194, 0.45) !important;
+}
+[data-theme="dark"] .pf-process-step-row:hover .pf-step-content-card {
+  border-color: #CE9FE4 !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(206, 159, 228, 0.25) !important;
+}
+[data-theme="dark"] .pf-process-step-row:hover .pf-step-img-card {
+  border-color: #CE9FE4 !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(206, 159, 228, 0.25) !important;
+}
+[data-theme="dark"] .pf-process-step-row:hover .pf-step-content-card h3 {
+  color: #CE9FE4 !important;
+}
 [data-theme="dark"] .pf-step-content-card h3 {
   color: #FFFFFF !important;
 }
@@ -875,9 +1032,30 @@
 
 /* Badges */
 [data-theme="dark"] .pf-badge {
-  background-color: #240E36;
+  background: linear-gradient(135deg, #240E36 0%, #301348 100%) !important;
   color: #E2BDF5 !important;
-  border-color: #4C236E;
+  border-color: #5C2D82 !important;
+}
+[data-theme="dark"] .pf-badge i {
+  color: #CE9FE4 !important;
+}
+[data-theme="dark"] .pf-badge-cursor {
+  color: #CE9FE4 !important;
+}
+[data-theme="dark"] .pf-badge::before {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.22) 50%, transparent 100%) !important;
+}
+[data-theme="dark"] .pf-badge:hover {
+  background: linear-gradient(135deg, #9327C2 0%, #6A149B 100%) !important;
+  border-color: transparent !important;
+  box-shadow: 0 8px 26px rgba(147, 39, 194, 0.6), 0 0 16px rgba(206, 159, 228, 0.35) !important;
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .pf-badge:hover i {
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .pf-badge:hover .pf-badge-cursor {
+  color: #FFFFFF !important;
 }
 [data-theme="dark"] .pf-badge-dark {
   background-color: rgba(255, 255, 255, 0.1);
@@ -1578,7 +1756,8 @@
   color: #D8B8E8 !important;
 }
 [data-theme="dark"] .pf-featured-desc {
-  color: #DDD2E6 !important;
+  color: #EDE4F5 !important;
+  font-weight: 700 !important;
 }
 [data-theme="dark"] .pf-featured-footer {
   border-color: rgba(185, 131, 209, 0.2) !important;
@@ -1647,8 +1826,156 @@
   color: #EDE5F4 !important;
 }
 
-/* Sticky Contact Bar in Dark Mode */
+/* Contact Cards Container in Dark Mode */
 [data-theme="dark"] .pf-sticky-contact-bar {
-  background: var(--pf-surface) !important;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Service Details Typography in Dark Mode */
+[data-theme="dark"] #sd-dive-desc {
+  color: #EDE4F5 !important;
+}
+
+[data-theme="dark"] #sd-papers-grid p,
+[data-theme="dark"] .pf-paper-desc {
+  color: #DDD2E6 !important;
+}
+
+[data-theme="dark"] .pf-pricing-note {
+  color: #DDD2E6 !important;
+}
+
+[data-theme="dark"] #sd-pricing-intro,
+[data-theme="dark"] .pf-pricing-intro {
+  color: #EDE4F5 !important;
+}
+
+[data-theme="dark"] #serviceFaqAccordion .accordion-body,
+[data-theme="dark"] .pf-faq-answer {
+  color: #DDD2E6 !important;
+  font-weight: 700 !important;
+}
+
+/* Finishing & Embellishment Cards in Dark Mode */
+[data-theme="dark"] .pf-finishing-card {
+  background-color: #1E0E2E !important;
+  border-color: rgba(226, 212, 238, 0.18) !important;
+}
+
+[data-theme="dark"] .pf-finishing-card:hover {
+  border-color: #C796DD !important;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55), 0 0 18px rgba(199, 150, 221, 0.25) !important;
+}
+
+[data-theme="dark"] .pf-finishing-card .pf-finishing-icon {
+  background: #2D1442 !important;
+  border-color: rgba(226, 212, 238, 0.2) !important;
+  color: #E2BDF5 !important;
+}
+
+[data-theme="dark"] .pf-finishing-card h5 {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .pf-finishing-card span {
+  color: #DDD2E6 !important;
+}
+
+/* Core Pillar Cards in Dark Mode */
+[data-theme="dark"] .pf-pillar-card {
+  background-color: #190A27 !important;
+  border-color: #381A54 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="dark"] .pf-pillar-card::before {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(206, 159, 228, 0.20) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+[data-theme="dark"] .pf-pillar-card:hover {
+  background-color: #210E33 !important;
+  border-color: #CE9FE4 !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(206, 159, 228, 0.28) !important;
+}
+
+[data-theme="dark"] .pf-pillar-card.pf-pillar-active {
+  border-color: #CE9FE4 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 16px rgba(206, 159, 228, 0.24) !important;
+}
+
+[data-theme="dark"] .pf-pillar-card .pf-pillar-icon-wrap {
+  background-color: #26113A;
+  border-color: #421F64;
+  color: #CE9FE4;
+}
+
+[data-theme="dark"] .pf-pillar-card:hover .pf-pillar-icon-wrap {
+  background: linear-gradient(135deg, #A855F7 0%, #7922A5 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.45);
+}
+
+[data-theme="dark"] .pf-pillar-card h4 {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .pf-pillar-card:hover h4,
+[data-theme="dark"] .pf-pillar-card.pf-pillar-active h4 {
+  color: #CE9FE4 !important;
+}
+
+[data-theme="dark"] .pf-pillar-card p {
+  color: #DDD2E6 !important;
+}
+
+[data-theme="dark"] .pf-pillar-card:hover p {
+  color: #FFFFFF !important;
+}
+
+/* Mission & Vision Cards in Dark Mode */
+[data-theme="dark"] .pf-mission-card {
+  background-color: #190A27 !important;
+  border-color: #381A54 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+[data-theme="dark"] .pf-mission-card::after {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(206, 159, 228, 0.20) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+[data-theme="dark"] .pf-mission-card:hover {
+  background-color: #210E33 !important;
+  border-color: #CE9FE4 !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(206, 159, 228, 0.28) !important;
+}
+[data-theme="dark"] .pf-mission-card .pf-box-icon {
+  background: #26113A !important;
+  border-color: #421F64 !important;
+  color: #CE9FE4 !important;
+}
+[data-theme="dark"] .pf-mission-card:hover .pf-box-icon {
+  background: linear-gradient(135deg, #A855F7 0%, #7922A5 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.45);
+}
+[data-theme="dark"] .pf-mission-card .pf-box-title {
+  color: #CE9FE4 !important;
+}
+[data-theme="dark"] .pf-mission-card:hover .pf-box-title {
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .pf-mission-card p {
+  color: #DDD2E6 !important;
+}
+[data-theme="dark"] .pf-mission-card:hover p {
+  color: #FFFFFF !important;
 }

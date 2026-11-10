@@ -89,7 +89,7 @@
   }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 768.98px) {
   [dir="rtl"] .pf-nav-menu {
     right: auto;
     left: -320px;
@@ -100,7 +100,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 769px) {
   [dir="rtl"] .pf-nav-menu {
     left: auto !important;
     right: auto !important;

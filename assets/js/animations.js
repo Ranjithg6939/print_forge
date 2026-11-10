@@ -12,6 +12,8 @@
     initScrollReveal();
     initCounters();
     initHeadlineEffects();
+    initBadgeTyping();
+    initTagLetterWave();
   });
 
   // IntersectionObserver for scroll-triggered reveal
@@ -125,6 +127,103 @@
       headlineObserver.observe(el);
     });
   }
+
+  // Dynamic typing reveal animation for section badges
+  function initBadgeTyping() {
+    if (prefersReducedMotion) return;
+    const badges = document.querySelectorAll('.pf-badge');
+    if (!badges.length) return;
+
+    const badgeObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const badge = entry.target;
+          obs.unobserve(badge);
+
+          const icon = badge.querySelector('i');
+          const iconHTML = icon ? icon.outerHTML : '';
+          
+          const clone = badge.cloneNode(true);
+          const cloneIcon = clone.querySelector('i');
+          if (cloneIcon) cloneIcon.remove();
+          const text = clone.textContent.trim();
+          if (!text) return;
+
+          badge.innerHTML = (iconHTML ? iconHTML + ' ' : '') + '<span class="pf-badge-text"></span><span class="pf-badge-cursor">|</span>';
+          const textSpan = badge.querySelector('.pf-badge-text');
+
+          let charIdx = 0;
+          const speed = 28;
+
+          function typeNext() {
+            if (charIdx < text.length) {
+              textSpan.textContent += text.charAt(charIdx);
+              charIdx++;
+              setTimeout(typeNext, speed);
+            } else {
+              const cursor = badge.querySelector('.pf-badge-cursor');
+              if (cursor) {
+                setTimeout(() => {
+                  cursor.style.opacity = '0';
+                  setTimeout(() => cursor.remove(), 400);
+                }, 800);
+              }
+            }
+          }
+
+          setTimeout(typeNext, 120);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    badges.forEach(b => badgeObserver.observe(b));
+  }
+
+  // Continuous undulating wave & interactive letter animation for image tags / pills (.pf-box-img-tag)
+  function initTagLetterWave() {
+    const tags = document.querySelectorAll('.pf-box-img-tag');
+    if (!tags.length) return;
+
+    tags.forEach(tag => {
+      if (tag.dataset.waveReady === 'true') return;
+      tag.dataset.waveReady = 'true';
+
+      const rawText = tag.textContent.replace(/\|/g, '').trim();
+      if (!rawText) return;
+
+      tag.setAttribute('aria-label', rawText);
+      tag.innerHTML = '';
+
+      // Pulsing Beacon Dot
+      const dot = document.createElement('span');
+      dot.className = 'pf-tag-dot';
+      tag.appendChild(dot);
+
+      // Letters wrapper
+      const charsWrap = document.createElement('span');
+      charsWrap.className = 'pf-tag-chars';
+
+      let charIndex = 0;
+      for (const ch of rawText) {
+        if (ch === ' ') {
+          const space = document.createElement('span');
+          space.className = 'pf-char-space';
+          space.innerHTML = '&nbsp;';
+          charsWrap.appendChild(space);
+        } else {
+          const charSpan = document.createElement('span');
+          charSpan.className = 'pf-char';
+          charSpan.textContent = ch;
+          charSpan.style.setProperty('--char-idx', charIndex);
+          charsWrap.appendChild(charSpan);
+          charIndex++;
+        }
+      }
+      tag.appendChild(charsWrap);
+    });
+  }
+  window.pfInitTagTyping = initTagLetterWave;
+  window.pfInitTagLetterWave = initTagLetterWave;
 
   // Automatically initialize interactive 3D dot grid wave if not yet present
   if (!document.getElementById('pf-interactive-dot-canvas') && !document.querySelector('script[src*="dot-grid-wave.js"]')) {

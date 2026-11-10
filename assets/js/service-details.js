@@ -863,6 +863,10 @@
           </div>
         </div>
       `).join('');
+
+      if (typeof window.pfInitTagTyping === 'function') {
+        window.pfInitTagTyping();
+      }
     }
 
     // 6. FAQs Accordion
