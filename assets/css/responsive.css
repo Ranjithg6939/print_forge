@@ -518,26 +518,35 @@
   }
 
   /* Price Row Perfect Center Alignment */
+  .pf-box-card {
+    padding: 1.25rem 1rem !important;
+  }
   .pf-box-price-row {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: 8px !important;
+    gap: 6px !important;
+    min-height: 48px !important;
   }
   .pf-box-price {
+    font-size: clamp(1.2rem, 1.3vw, 1.5rem) !important;
     display: inline-flex !important;
     align-items: center !important;
-    line-height: 1 !important;
-    gap: 6px !important;
+    line-height: 1.1 !important;
+    gap: 4px !important;
     margin: 0 !important;
+    letter-spacing: -0.025em !important;
   }
   .pf-box-unit-pill {
+    font-size: 0.72rem !important;
+    padding: 3px 8px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     line-height: 1.2 !important;
     margin: 0 !important;
     flex-shrink: 0 !important;
+    letter-spacing: -0.01em !important;
   }
 }
 

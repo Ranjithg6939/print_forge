@@ -570,14 +570,23 @@
   border-color: rgba(226, 212, 238, 0.18) !important;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45) !important;
 }
-[data-theme="dark"] .pf-intro-section-card h2 {
+[data-theme="dark"] .pf-intro-section-card h2,
+[data-theme="dark"] .pf-intro-section-card .pf-title-underline {
   color: #FFFFFF !important;
 }
 [data-theme="dark"] .pf-intro-section-card p {
   color: #DDD2E6 !important;
 }
-[data-theme="dark"] .pf-intro-section-card span.fw-bold {
+[data-theme="dark"] .pf-intro-section-card p.fw-bold {
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .pf-intro-section-card span {
   color: #EDE4F5 !important;
+}
+[data-theme="dark"] .pf-intro-section-card .pf-badge {
+  background: rgba(185, 131, 209, 0.22) !important;
+  color: #E2CDF2 !important;
+  border-color: rgba(185, 131, 209, 0.45) !important;
 }
 
 /* Commercial Paper & Coating Library Card */
@@ -671,7 +680,36 @@
 [data-theme="dark"] .pf-step-hint,
 [data-theme="dark"] .pf-checklist-intro {
   color: #EDE4F5 !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .pf-step-title,
+[data-theme="dark"] .pf-preflight-title {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .pf-checklist-item {
+  color: #DDD2E6 !important;
+}
+
+[data-theme="dark"] .pf-checklist-item strong {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .pf-preflight-desc {
+  color: #DDD2E6 !important;
+}
+
+[data-theme="dark"] .pf-file-dropzone .pf-dropzone-text {
+  color: #EDE4F5 !important;
+}
+
+[data-theme="dark"] .pf-file-dropzone .pf-dropzone-text strong {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .pf-file-dropzone .text-secondary {
+  color: #DDD2E6 !important;
 }
 
 [data-theme="dark"] .pf-article-header-meta i,
@@ -1757,16 +1795,27 @@
 }
 [data-theme="dark"] .pf-featured-desc {
   color: #EDE4F5 !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
+}
+[data-theme="dark"] .pf-featured-guide-body .text-secondary {
+  color: #DDD2E6 !important;
 }
 [data-theme="dark"] .pf-featured-footer {
   border-color: rgba(185, 131, 209, 0.2) !important;
 }
-[data-theme="dark"] .pf-featured-footer .text-dark {
-  color: #EDE5F4 !important;
+[data-theme="dark"] .pf-featured-footer .text-dark,
+[data-theme="dark"] .pf-featured-footer span.fw-bold {
+  color: #FFFFFF !important;
 }
-[data-theme="dark"] .pf-author-sub {
-  color: #B9A9C7 !important;
+[data-theme="dark"] .pf-author-sub,
+[data-theme="dark"] .pf-featured-footer .text-secondary {
+  color: #DDD2E6 !important;
+}
+[data-theme="dark"] .pf-featured-footer .pf-link-arrow {
+  color: #CE9FE4 !important;
+}
+[data-theme="dark"] .pf-featured-footer .pf-link-arrow:hover {
+  color: #FFFFFF !important;
 }
 
 /* ===================================================================

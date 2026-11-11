@@ -2762,9 +2762,9 @@ section,
 }
 .pf-featured-desc {
   font-size: 1.05rem;
-  font-weight: 700 !important;
+  font-weight: 700;
   line-height: 1.65;
-  color: #2D1A3E !important;
+  color: var(--pf-text-body);
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -3198,31 +3198,51 @@ section,
 
 /* Contact Page Bold Paragraphs & Clean Readability */
 .pf-contact-card-text {
-  font-weight: 700 !important;
-  color: #2D1A3E !important;
+  font-weight: 700;
+  color: var(--pf-text-body);
   font-size: 0.95rem;
   line-height: 1.55;
 }
 
 .pf-quote-form-intro {
-  font-weight: 700 !important;
-  color: #2D1A3E !important;
+  font-weight: 700;
+  color: var(--pf-text-body);
   font-size: 0.98rem;
   line-height: 1.6;
 }
 
 .pf-step-hint {
-  font-weight: 700 !important;
-  color: #2D1A3E !important;
+  font-weight: 700;
+  color: var(--pf-text-body);
   font-size: 0.92rem;
   line-height: 1.55;
 }
 
 .pf-checklist-intro {
-  font-weight: 700 !important;
-  color: #2D1A3E !important;
+  font-weight: 700;
+  color: var(--pf-text-body);
   font-size: 0.95rem;
   line-height: 1.55;
+}
+
+.pf-step-title {
+  color: var(--pf-text-headings);
+}
+
+.pf-checklist-item {
+  color: var(--pf-text-body);
+}
+
+.pf-checklist-item strong {
+  color: var(--pf-text-headings);
+}
+
+.pf-preflight-title {
+  color: var(--pf-text-headings);
+}
+
+.pf-preflight-desc {
+  color: var(--pf-text-body);
 }
 
 /* High-Contrast Preflight CTA Card */
@@ -4686,7 +4706,7 @@ section[style*="#15091e"] {
   background: var(--pf-surface);
   border: 1.5px solid var(--pf-border-color);
   border-radius: 14px;
-  padding: 1.25rem;
+  padding: 1.25rem 1rem;
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   height: 100%;
@@ -4998,8 +5018,8 @@ section[style*="#15091e"] {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  gap: 10px !important;
-  min-height: 52px;
+  gap: 6px !important;
+  min-height: 48px;
   padding-bottom: 0.75rem;
   margin-bottom: 0.75rem;
   border-bottom: 1px solid var(--pf-border-color);
@@ -5007,27 +5027,28 @@ section[style*="#15091e"] {
 
 .pf-box-price {
   font-family: var(--pf-font-heading);
-  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 1.35vw, 1.55rem);
   font-weight: 800;
   color: var(--pf-primary-deep);
-  line-height: 1 !important;
+  line-height: 1.1 !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
+  gap: 4px !important;
   margin: 0 !important;
+  letter-spacing: -0.025em;
 }
 
 .pf-box-price span {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   color: var(--pf-text-headings);
   line-height: 1;
 }
 
 .pf-box-unit-pill {
-  font-size: 0.8125rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  padding: 5px 12px;
+  padding: 3px 8px;
   border-radius: 50px;
   background: var(--pf-soft-lilac);
   color: var(--pf-primary-deep);
@@ -5039,6 +5060,7 @@ section[style*="#15091e"] {
   line-height: 1.2 !important;
   flex-shrink: 0 !important;
   margin: 0 !important;
+  letter-spacing: -0.01em;
 }
 
 .pf-box-features {
@@ -5563,6 +5585,18 @@ section[style*="#15091e"] {
   max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.pf-intro-section-card h2 {
+  color: var(--pf-text-headings);
+}
+
+.pf-intro-section-card p {
+  color: var(--pf-text-secondary);
+}
+
+.pf-intro-section-card span.fw-bold {
+  color: var(--pf-text-headings);
 }
 
 @media (max-width: 1199.98px) {
